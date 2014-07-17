@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Code for Gob.cl</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="initial-scale=1">
+
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="assets/css/main.css">
+        <link href="assets/css/prism.css" rel="stylesheet">
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+        <script src="assets/js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="assets/js/prism.js"></script>
+
+        <script src="assets/js/main.min.js"></script>
+
+    </head>
+    <body class="language-markup">
+
+        <header>
+            
+        </header>
+
+        <section id="elementos-html" class="expansible">
+            <h3 class="titulo-seccion">Elementos HTML</h3>
+            
+            <article id="header-full">
+                <h4 class="titulo-elemento">Header Full</h4>
+                <div class="contenido">
+
+                    <header class="header-gob full">
+                        <div class="cf"></div>
+                        <div class="wrap"><h1 id="main-logo"><a href="#"></a></h1></div>
+                        <div class="banner">
+                            <div class="wrap">
+                                <div class="texto">
+                                    <h1></h1>
+                                    <p></p>
+                                </div>
+                                <div class="cf"></div>
+                            </div>
+                        </div>
+                        <nav>
+                            <div class="wrap">
+                                <ul class="menu-main">
+                                    <li><a href="#">Item Menú 1</a></li>
+                                    <li>
+                                        <a href="#">Item Menú 2</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="#">Ítem Sub-menú 1</a></li>
+                                            <li><a href="#">Ítem Sub-menú 2</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Item Menú 3</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="#">Ítem Sub-menú 1</a></li>
+                                            <li><a href="#">Ítem Sub-menú 2</a></li>
+                                            <li><a href="#">Ítem Sub-menú 3</a></li>
+                                            <li><a href="#">Ítem Sub-menú 4</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Item Menú 4</a></li>
+                                    <li><a href="#">Item Menú 5</a></li>
+                                    <li><a href="#">Item Menú 6</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </header>
+
+                </div>
+                <div class="codigo">
+                    <a class="mostrar-codigo">Ver Código</a>
+                    <div class="contenedor-codigo">
+                        <pre><code>&lt;header class="header-gob full">
+    &lt;div class="cf">&lt;/div>
+    &lt;div class="wrap">&lt;h1 id="main-logo">&lt;a href="#">&lt;/a>&lt;/h1>&lt;/div>
+    &lt;div class="banner">
+        &lt;div class="wrap">
+            &lt;div class="texto">
+                &lt;h1>&lt;/h1>
+                &lt;p>&lt;/p>
+            &lt;/div>
+            &lt;div class="cf">&lt;/div>
+        &lt;/div>
+    &lt;/div>
+    &lt;nav>
+        &lt;div class="wrap">
+            &lt;ul class="menu-main">
+                &lt;li>&lt;a href="#">Item Menú 1&lt;/a>&lt;/li>
+                &lt;li>
+                    &lt;a href="#">Item Menú 2&lt;/a>
+                    &lt;ul class="sub-menu">
+                        &lt;li>&lt;a href="#">Ítem Sub-menú 1&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="#">Ítem Sub-menú 2&lt;/a>&lt;/li>
+                    &lt;/ul>
+                &lt;/li>
+                &lt;li>
+                    &lt;a href="#">Item Menú 3&lt;/a>
+                    &lt;ul class="sub-menu">
+                        &lt;li>&lt;a href="#">Ítem Sub-menú 1&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="#">Ítem Sub-menú 2&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="#">Ítem Sub-menú 3&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="#">Ítem Sub-menú 4&lt;/a>&lt;/li>
+                    &lt;/ul>
+                &lt;/li>
+                &lt;li>&lt;a href="#">Item Menú 4&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">Item Menú 5&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">Item Menú 6&lt;/a>&lt;/li>
+            &lt;/ul>
+        &lt;/div>
+    &lt;/nav>
+&lt;/header></code></pre>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="header-simple">
+                <h4 class="titulo-elemento">Header Simple</h4>
+                <div class="contenido">
+
+                    <header class="header-gob">
+                        <div class="cf"></div>
+                        <div class="wrap"><h1 id="main-logo"><a href="#"></a></h1></div>
+                        <nav>
+                            <div class="wrap">
+                                <ul class="menu-main">
+                                    <li><a href="#">Item Menú 1</a></li>
+                                    <li>
+                                        <a href="#">Item Menú 2</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="#">Ítem Sub-menú 1</a></li>
+                                            <li><a href="#">Ítem Sub-menú 2</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">Item Menú 3</a>
+                                        <ul class="sub-menu">
+                                            <li><a href="#">Ítem Sub-menú 1</a></li>
+                                            <li><a href="#">Ítem Sub-menú 2</a></li>
+                                            <li><a href="#">Ítem Sub-menú 3</a></li>
+                                            <li><a href="#">Ítem Sub-menú 4</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Item Menú 4</a></li>
+                                    <li><a href="#">Item Menú 5</a></li>
+                                    <li><a href="#">Item Menú 6</a></li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </header>
+
+                </div>
+                <div class="codigo">
+                    <a class="mostrar-codigo">Ver Código</a>
+                    <div class="contenedor-codigo">
+                        <pre><code>&lt;header class="header-gob">
+    &lt;div class="cf">&lt;/div>
+    &lt;div class="wrap">&lt;h1 id="main-logo">&lt;a href="#">&lt;/a>&lt;/h1>&lt;/div>
+    &lt;nav>
+        &lt;div class="wrap">
+            &lt;ul class="menu-main">
+                &lt;li>&lt;a href="#">Item Menú 1&lt;/a>&lt;/li>
+                &lt;li>
+                    &lt;a href="#">Item Menú 2&lt;/a>
+                    &lt;ul class="sub-menu">
+                        &lt;li>&lt;a href="#">Ítem Sub-menú 1&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="#">Ítem Sub-menú 2&lt;/a>&lt;/li>
+                    &lt;/ul>
+                &lt;/li>
+                &lt;li>
+                    &lt;a href="#">Item Menú 3&lt;/a>
+                    &lt;ul class="sub-menu">
+                        &lt;li>&lt;a href="#">Ítem Sub-menú 1&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="#">Ítem Sub-menú 2&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="#">Ítem Sub-menú 3&lt;/a>&lt;/li>
+                        &lt;li>&lt;a href="#">Ítem Sub-menú 4&lt;/a>&lt;/li>
+                    &lt;/ul>
+                &lt;/li>
+                &lt;li>&lt;a href="#">Item Menú 4&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">Item Menú 5&lt;/a>&lt;/li>
+                &lt;li>&lt;a href="#">Item Menú 6&lt;/a>&lt;/li>
+            &lt;/ul>
+        &lt;/div>
+    &lt;/nav>
+&lt;/header></code></pre>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="footer-full">
+                <h4 class="titulo-elemento">Footer Full</h4>
+                <div class="contenido">
+                    <footer>
+                        <div class="wrap">
+                        
+                            <div class="bicolor"><span class="blue"></span><span class="red"></span></div>
+                            <div class="top">
+                                <div class="listas">
+
+                                    <div class="lista">
+                                        <h3>Menú Footer 1</h3>
+                                        <div class="menu-container">
+                                            <ul id="menu-ejemplo-1" class="menu">
+                                                <li><a href="#">Ítem Footer Ejemplo 1</a></li>
+                                                <li><a href="#">Ítem Footer Ejemplo 2</a></li>
+                                                <li><a href="#">Ítem Footer Ejemplo 3</a></li>
+                                                <li><a href="#">Ítem Footer Ejemplo 4</a></li>
+                                                <li><a href="#">Ítem Footer Ejemplo 5</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="lista">
+                                        <h3>Menú Footer 2</h3>
+                                        <div class="menu-container">
+                                            <ul id="menu-ejemplo-1" class="menu">
+                                                <li><a href="#">Ítem Footer Ejemplo 1</a></li>
+                                                <li><a href="#">Ítem Footer Ejemplo 2</a></li>
+                                                <li><a href="#">Ítem Footer Ejemplo 3</a></li>
+                                                <li><a href="#">Ítem Footer Ejemplo 4</a></li>
+                                                <li><a href="#">Ítem Footer Ejemplo 5</a></li>
+                                                <li><a href="#">Ítem Footer Ejemplo 6</a></li>
+                                                <li><a href="#">Ítem Footer Ejemplo 7</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="lista">
+                                        <h3>Menú Footer 3</h3>
+                                        <div class="menu-container">
+                                            <ul id="menu-ejemplo-1" class="menu">
+                                                <li><a href="#">Ítem Footer Ejemplo 1</a></li>
+                                                <li><a href="#">Ítem Footer Ejemplo 2</a></li>
+                                                <li><a href="#">Ítem Footer Ejemplo 3</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="bottom">
+                                <div class="left">
+                                    <span>Palacio de La Moneda - Teléfono: +56 2 26904000</span>
+                                </div>
+                                <nav>
+                                    <ul>
+                                        <li><a href="/politicas-de-privacidad">Políticas de Privacidad</a></li>
+                                        <li><a href="/visualizadores">Visualizadores & Plug-ins</a></li>
+                                        <li><a href="http://creativecommons.org/licenses/by/3.0/cl/">CC .</a></li>
+                                    </ul>
+                                </nav>
+                                <div class="cf"></div>
+                                <div class="bicolor"><span class="blue"></span><span class="red"></span></div>
+                            </div>
+
+                        </div>
+                    </footer>
+                </div>
+                <div class="codigo">
+                    <a class="mostrar-codigo">Ver Código</a>
+                    <div class="contenedor-codigo">
+                        <pre><code>&lt;footer>
+    &lt;div class="wrap">
+    
+        &lt;div class="bicolor">&lt;span class="blue">&lt;/span>&lt;span class="red">&lt;/span>&lt;/div>
+        &lt;div class="top">
+            &lt;div class="listas">
+
+                &lt;div class="lista">
+                    &lt;h3>Menú Footer 1&lt;/h3>
+                    &lt;div class="menu-container">
+                        &lt;ul id="menu-ejemplo-1" class="menu">
+                            &lt;li>&lt;a href="#">Ítem Footer Ejemplo 1&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">Ítem Footer Ejemplo 2&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">Ítem Footer Ejemplo 3&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">Ítem Footer Ejemplo 4&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">Ítem Footer Ejemplo 5&lt;/a>&lt;/li>
+                        &lt;/ul>
+                    &lt;/div>
+                &lt;/div>
+
+                &lt;div class="lista">
+                    &lt;h3>Menú Footer 2&lt;/h3>
+                    &lt;div class="menu-container">
+                        &lt;ul id="menu-ejemplo-1" class="menu">
+                            &lt;li>&lt;a href="#">Ítem Footer Ejemplo 1&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">Ítem Footer Ejemplo 2&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">Ítem Footer Ejemplo 3&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">Ítem Footer Ejemplo 4&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">Ítem Footer Ejemplo 5&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">Ítem Footer Ejemplo 6&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">Ítem Footer Ejemplo 7&lt;/a>&lt;/li>
+                        &lt;/ul>
+                    &lt;/div>
+                &lt;/div>
+
+                &lt;div class="lista">
+                    &lt;h3>Menú Footer 3&lt;/h3>
+                    &lt;div class="menu-container">
+                        &lt;ul id="menu-ejemplo-1" class="menu">
+                            &lt;li>&lt;a href="#">Ítem Footer Ejemplo 1&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">Ítem Footer Ejemplo 2&lt;/a>&lt;/li>
+                            &lt;li>&lt;a href="#">Ítem Footer Ejemplo 3&lt;/a>&lt;/li>
+                        &lt;/ul>
+                    &lt;/div>
+                &lt;/div>
+
+            &lt;/div>
+        &lt;/div>
+
+        &lt;div class="bottom">
+            &lt;div class="left">
+                &lt;span>Palacio de La Moneda - Teléfono: +56 2 26904000&lt;/span>
+            &lt;/div>
+            &lt;nav>
+                &lt;ul>
+                    &lt;li>&lt;a href="/politicas-de-privacidad">Políticas de Privacidad&lt;/a>&lt;/li>
+                    &lt;li>&lt;a href="/visualizadores">Visualizadores & Plug-ins&lt;/a>&lt;/li>
+                    &lt;li>&lt;a href="http://creativecommons.org/licenses/by/3.0/cl/">CC .&lt;/a>&lt;/li>
+                &lt;/ul>
+            &lt;/nav>
+            &lt;div class="cf">&lt;/div>
+            &lt;div class="bicolor">&lt;span class="blue">&lt;/span>&lt;span class="red">&lt;/span>&lt;/div>
+        &lt;/div>
+
+    &lt;/div>
+&lt;/footer>
+                        </code></pre>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="footer">
+                <h4 class="titulo-elemento">Footer Simple</h4>
+                <div class="contenido">
+                    <footer>
+                        <div class="wrap">
+                        
+                            <div class="bicolor"><span class="blue"></span><span class="red"></span></div>
+                            <div class="bottom">
+                                <div class="left">
+                                    <span>Palacio de La Moneda - Teléfono: +56 2 26904000</span>
+                                </div>
+                                <nav>
+                                    <ul>
+                                        <li><a href="/politicas-de-privacidad">Políticas de Privacidad</a></li>
+                                        <li><a href="/visualizadores">Visualizadores & Plug-ins</a></li>
+                                        <li><a href="http://creativecommons.org/licenses/by/3.0/cl/">CC .</a></li>
+                                    </ul>
+                                </nav>
+                                <div class="cf"></div>
+                                <div class="bicolor"><span class="blue"></span><span class="red"></span></div>
+                            </div>
+
+                        </div>
+                    </footer>
+                </div>
+                <div class="codigo">
+                    <a class="mostrar-codigo">Ver Código</a>
+                    <div class="contenedor-codigo">
+                        <pre><code>&lt;footer>
+    &lt;div class="wrap">
+    
+        &lt;div class="bicolor">&lt;span class="blue">&lt;/span>&lt;span class="red">&lt;/span>&lt;/div>
+
+        &lt;div class="bottom">
+            &lt;div class="left">
+                &lt;span>Palacio de La Moneda - Teléfono: +56 2 26904000&lt;/span>
+            &lt;/div>
+            &lt;nav>
+                &lt;ul>
+                    &lt;li>&lt;a href="/politicas-de-privacidad">Políticas de Privacidad&lt;/a>&lt;/li>
+                    &lt;li>&lt;a href="/visualizadores">Visualizadores & Plug-ins&lt;/a>&lt;/li>
+                    &lt;li>&lt;a href="http://creativecommons.org/licenses/by/3.0/cl/">CC .&lt;/a>&lt;/li>
+                &lt;/ul>
+            &lt;/nav>
+            &lt;div class="cf">&lt;/div>
+            &lt;div class="bicolor">&lt;span class="blue">&lt;/span>&lt;span class="red">&lt;/span>&lt;/div>
+        &lt;/div>
+
+    &lt;/div>
+&lt;/footer>
+                        </code></pre>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <section id="colores" class="language-css">
+            <h3 class="titulo-seccion">Colores</h3>
+            
+            <article id="color-back">
+                <h4 class="titulo-elemento">Fondo</h4>
+                <div class="contenido"></div>
+                <div class="codigo">
+                    <div class="contenedor-codigo">
+                        <pre><code>HEX: #E6E6E6</code></pre>
+                    </div>
+                    <div class="contenedor-codigo">
+                        <pre><code>LESS: @back</code></pre>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="color-backalt">
+                <h4 class="titulo-elemento">Fondo 2 / Bordes</h4>
+                <div class="contenido"></div>
+                <div class="codigo">
+                    <div class="contenedor-codigo">
+                        <pre><code>HEX: #EFEFEF</code></pre>
+                    </div>
+                    <div class="contenedor-codigo">
+                        <pre><code>LESS: @backalt</code></pre>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="color-blue">
+                <h4 class="titulo-elemento">Azul gobCL</h4>
+                <div class="contenido"></div>
+                <div class="codigo">
+                    <div class="contenedor-codigo">
+                        <pre><code>HEX: #0168B3</code></pre>
+                    </div>
+                    <div class="contenedor-codigo">
+                        <pre><code>LESS: @blue</code></pre>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="color-red">
+                <h4 class="titulo-elemento">Rojo gobCL</h4>
+                <div class="contenido"></div>
+                <div class="codigo">
+                    <div class="contenedor-codigo">
+                        <pre><code>HEX: #EE3A43</code></pre>
+                    </div>
+                    <div class="contenedor-codigo">
+                        <pre><code>LESS: @red</code></pre>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="color-lightgrey">
+                <h4 class="titulo-elemento">Gris Claro</h4>
+                <div class="contenido"></div>
+                <div class="codigo">
+                    <div class="contenedor-codigo">
+                        <pre><code>HEX: #BDC9D1</code></pre>
+                    </div>
+                    <div class="contenedor-codigo">
+                        <pre><code>LESS: @lightgrey</code></pre>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="color-grey">
+                <h4 class="titulo-elemento">Gris</h4>
+                <div class="contenido"></div>
+                <div class="codigo">
+                    <div class="contenedor-codigo">
+                        <pre><code>HEX: #7A8791</code></pre>
+                    </div>
+                    <div class="contenedor-codigo">
+                        <pre><code>LESS: @grey</code></pre>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="color-darkgrey">
+                <h4 class="titulo-elemento">Gris Oscuro</h4>
+                <div class="contenido"></div>
+                <div class="codigo">
+                    <div class="contenedor-codigo">
+                        <pre><code>HEX: #475156</code></pre>
+                    </div>
+                    <div class="contenedor-codigo">
+                        <pre><code>LESS: @darkgrey</code></pre>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="color-darkestgrey">
+                <h4 class="titulo-elemento">Gris Oscuro 2</h4>
+                <div class="contenido"></div>
+                <div class="codigo">
+                    <div class="contenedor-codigo">
+                        <pre><code>HEX: #2E353A</code></pre>
+                    </div>
+                    <div class="contenedor-codigo">
+                        <pre><code>LESS: @darkestgrey</code></pre>
+                    </div>
+                </div>
+            </article>
+
+            <div class="cf"></div>
+
+        </section>
+
+        <section id="titulos">
+            <h3 class="titulo-seccion">Títulos</h3>
+            
+            <article id="titulo-h1">
+                <h4 class="titulo-elemento">Título H1</h4>
+                <div class="contenido">
+                    <h1>Lorem ipsum dolor sit amet</h1>
+                </div>
+                <div class="codigo">
+                    <div class="contenedor-codigo">
+                        <pre><code>&lt;h1>Lorem ipsum dolor sit amet&lt;/h1></code></pre>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="titulo-h2">
+                <h4 class="titulo-elemento">Título H2</h4>
+                <div class="contenido">
+                    <h2>Lorem ipsum dolor sit amet</h2>
+                </div>
+                <div class="codigo">
+                    <div class="contenedor-codigo">
+                        <pre><code>&lt;h2>Lorem ipsum dolor sit amet&lt;/h2></code></pre>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="titulo-h3">
+                <h4 class="titulo-elemento">Título H3</h4>
+                <div class="contenido">
+                    <h3>Lorem ipsum dolor sit amet</h3>
+                </div>
+                <div class="codigo">
+                    <div class="contenedor-codigo">
+                        <pre><code>&lt;h3>Lorem ipsum dolor sit amet&lt;/h3></code></pre>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="titulo-h4">
+                <h4 class="titulo-elemento">Título h4</h4>
+                <div class="contenido">
+                    <h4>Lorem ipsum dolor sit amet</h4>
+                </div>
+                <div class="codigo">
+                    <div class="contenedor-codigo">
+                        <pre><code>&lt;h4>Lorem ipsum dolor sit amet&lt;/h4></code></pre>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="titulo-h5">
+                <h4 class="titulo-elemento">Título H5</h4>
+                <div class="contenido">
+                    <h5>Lorem ipsum dolor sit amet</h5>
+                </div>
+                <div class="codigo">
+                    <div class="contenedor-codigo">
+                        <pre><code>&lt;h5>Lorem ipsum dolor sit amet&lt;/h5></code></pre>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="titulo-h6">
+                <h4 class="titulo-elemento">Título H6</h4>
+                <div class="contenido">
+                    <h6>Lorem ipsum dolor sit amet</h6>
+                </div>
+                <div class="codigo">
+                    <div class="contenedor-codigo">
+                        <pre><code>&lt;h6>Lorem ipsum dolor sit amet&lt;/h6></code></pre>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <section id="textos">
+            <h3 class="titulo-seccion">Textos</h3>
+            
+            <article id="parrafo">
+                <h4 class="titulo-elemento">Párrafo</h4>
+                <div class="contenido">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a interdum ante. In eleifend, eros quis mollis ornare, ipsum magna mollis augue, at eleifend libero mi hendrerit nisi.</p>
+                </div>
+                <div class="codigo">
+                    <div class="contenedor-codigo">
+                        <pre><code>&lt;p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a interdum ante. In eleifend, eros quis mollis ornare, ipsum magna mollis augue, at eleifend libero mi hendrerit nisi.&lt;/p></code></pre>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="cita">
+                <h4 class="titulo-elemento">Cita</h4>
+                <div class="contenido">
+                    <blockquote>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a interdum ante. In eleifend, eros quis mollis ornare, ipsum magna mollis augue, at eleifend libero mi hendrerit nisi."</blockquote>
+                </div>
+                <div class="codigo">
+                    <div class="contenedor-codigo">
+                        <pre><code>&lt;blockquote>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a interdum ante. In eleifend, eros quis mollis ornare, ipsum magna mollis augue, at eleifend libero mi hendrerit nisi."&lt;/blockquote></code></pre>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="estilos">
+                <h4 class="titulo-elemento">Estilos</h4>
+                <div class="contenido">
+                    <p>Lorem ipsum <strong>dolor sit amet</strong>, consectetur adipiscing elit. <em>Mauris a interdum ante.</em> In eleifend, eros quis <small>mollis ornare</small>, ipsum magna mollis augue<sup>heis</sup>, at eleifend libero mi<sub>elit</sub> hendrerit nisi.</p>
+                </div>
+                <div class="codigo">
+                    <div class="contenedor-codigo">
+                        <pre><code>&lt;p>Lorem ipsum &lt;strong>dolor sit amet&lt;/strong>, consectetur adipiscing elit. &lt;em>Mauris a interdum ante.&lt;/em> In eleifend, eros quis &lt;small>mollis ornare&lt;/small>, ipsum magna mollis augue&lt;sup>heis&lt;/sup>, at eleifend libero mi&lt;sub>elit&lt;/sub> hendrerit nisi.&lt;/p></code></pre>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <section id="listas">
+            <h3 class="titulo-seccion">Listas</h3>
+            
+            <article id="lista-ordenada">
+                <h4 class="titulo-elemento">Lista Ordenada</h4>
+                <div class="contenido">
+                    <ol>
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                        <li>Item 3</li>
+                    </ol>
+                </div>
+                <div class="codigo">
+                    <div class="contenedor-codigo">
+<pre><code>&lt;ol>
+    &lt;li>Item 1&lt;/li>
+    &lt;li>Item 2&lt;/li>
+    &lt;li>Item 3&lt;/li>
+&lt;/ol></code></pre>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="lista-noordenada">
+                <h4 class="titulo-elemento">Lista No Ordenada</h4>
+                <div class="contenido">
+                    <ul>
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                        <li>Item 3</li>
+                    </ul>
+                </div>
+                <div class="codigo">
+                    <div class="contenedor-codigo">
+<pre><code>&lt;ul>
+    &lt;li>Item 1&lt;/li>
+    &lt;li>Item 2&lt;/li>
+    &lt;li>Item 3&lt;/li>
+&lt;/ul></code></pre>
+                    </div>
+                </div>
+            </article>
+            
+            <article id="sub-lista">
+                <h4 class="titulo-elemento">Lista con Sub-lista</h4>
+                <div class="contenido">
+                    <ol>
+                        <li>Item 1</li>
+                        <li>Item 2</li>
+                        <li>Item 3
+                            <ul>
+                                <li>Sub Item 1</li>
+                                <li>Sub Item 2</li>
+                                <li>Sub Item 3</li>
+                            </ul>
+                        </li>
+                        <li>Item 4</li>
+                    </ol>
+                </div>
+                <div class="codigo">
+                    <div class="contenedor-codigo">
+<pre><code>&lt;ol>
+    &lt;li>Item 1&lt;/li>
+    &lt;li>Item 2&lt;/li>
+    &lt;li>Item 3
+        &lt;ul>
+            &lt;li>Sub Item 1&lt;/li>
+            &lt;li>Sub Item 2&lt;/li>
+            &lt;li>Sub Item 3&lt;/li>
+        &lt;/ul>
+    &lt;/li>
+    &lt;li>Item 4&lt;/li>
+&lt;/ol></code></pre>
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+    </body>
+</html>
