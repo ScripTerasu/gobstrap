@@ -1335,7 +1335,7 @@
 .alert-variant(@background; @border; @text-color) {
   background-color: @background;
   color: @text-color;
-  border-color: @border !important;
+  // border-color: @border !important;
 
   hr {
     border-top-color: darken(@border, 5%);
@@ -1529,7 +1529,7 @@ form {
 header {
   position:relative;
   margin-bottom:20px;
-  h1#logo-main {
+  .logo-main {
     margin:0;
     a {
       display:block;
@@ -1541,7 +1541,7 @@ header {
       }
     }
   }
-  #main-nav {
+  .main-nav {
     margin:0;
 	z-index:9999;
 	margin-top:40px;
