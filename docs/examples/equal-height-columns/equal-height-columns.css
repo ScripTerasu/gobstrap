@@ -5,6 +5,7 @@
 .row-eq-height {
   display: -webkit-flex;
   display: -ms-flexbox;
+  display: -webkit-box;
   display:         flex;
 }
 
