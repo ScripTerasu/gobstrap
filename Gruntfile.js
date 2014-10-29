@@ -230,7 +230,7 @@ module.exports = function (grunt) {
           ids: false,
           'overqualified-elements': false
         },
-        src: 'docs/assets/css/src/docs.css'
+        src: 'docs/assets/css/_src/docs.css'
       }
     },
 
@@ -250,8 +250,8 @@ module.exports = function (grunt) {
       },
       docs: {
         src: [
-          'docs/assets/css/src/docs.css',
-          'docs/assets/css/src/pygments-manni.css'
+          'docs/assets/css/_src/docs.css',
+          'docs/assets/css/_src/pygments-manni.css'
         ],
         dest: 'docs/assets/css/docs.min.css'
       }
@@ -284,8 +284,8 @@ module.exports = function (grunt) {
         dest: 'docs/examples/'
       },
       docs: {
-        src: 'docs/assets/css/src/docs.css',
-        dest: 'docs/assets/css/src/docs.css'
+        src: 'docs/assets/css/_src/docs.css',
+        dest: 'docs/assets/css/_src/docs.css'
       }
     },
 
