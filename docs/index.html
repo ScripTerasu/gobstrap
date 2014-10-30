@@ -6779,103 +6779,73 @@ title: Bootstrap
         <h2 id="header-gobcl">Header</h2>
         <p>Uno de los elementos que más aporta a la congruencia gráfica de Gobierno de Chile es el header predeterminado. Para usarlo, copia el código debajo y reemplaza la imagen de muestra por el isologo que corresponda -que se ajustará a un ancho máximo de 180px-, los ítems del menú y sus links correspondientes. Preocúpate de no incluir demasiados ítems en el menú para una correcta visualización en todos los dispositivos.</p>
         <div class="bs-example">
-          <header>
-            <div class="logo-main">
-              <a href="/">
-              <img src="http://placehold.it/180x160" alt="Placeholder">
-              </a>
-            </div>
-            <nav id="main-nav" class="navbar navbar-default nav-justified" role="navigation">
-              <div class="container-fluid">
-                <div class="navbar-header">
-                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-header-collapse">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  </button>
-                </div>
-                <div class="collapse navbar-collapse" id="bs-example-header-collapse">
-                  <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Inicio</a></li>
-                    <li><a href="#">Presidenta</a></li>
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">La Moneda <span class="caret"></span></a>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Visitas Guiadas</a></li>
-                        <li><a href="#">Historia del Palacio</a></li>
-                        <li><a href="#">Cambio de Guardia</a></li>
-                      </ul>
-                    </li>
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Autoridades <span class="caret"></span></a>
-                      <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Ministros y Ministras</a></li>
-                        <li><a href="#">Intendentes</a></li>
-                        <li><a href="#">Subsecretarios y Subsecretarias</a></li>
-                      </ul>
-                    </li>
-                    <li><a href="#">Prensa Presidencia</a></li>
-                    <li><a href="#">Escríbenos</a></li>
-                    <li><a href="#">English Version</a></li>
-                  </ul>
-                </div>
+          <header style="background:url(http://placehold.it/1280x520/666666/cccccc&text=Fondo) center center no-repeat; background-size:100% auto;">
+            <div class="container">
+
+              <h1 id="logo-main">
+                <a href="/">
+                  <img src="http://placehold.it/220x200&text=Logo" alt="Gobierno de Chile">
+                </a>
+              </h1>
+
+              <div class="barra-movil">
+                <span class="titulo">Menú</span>
+                <a class="menu-trigger">
+                  <div class="icono-menu">
+                    <span class="barra"></span>
+                    <span class="barra"></span>
+                    <span class="barra"></span>
+                  </div>
+                </a>
               </div>
-            </nav>
+
+              <nav class="menu-principal">
+                  <ul class="list-unstyled">
+                    <li><a href="#">Ítem 1</a></li>
+                    <li><a href="#">Ítem 2</a></li>
+                    <li><a href="#">Ítem 3</a></li>
+                    <li><a href="#">Ítem 4</a></li>
+                    <li><a href="#">Ítem 5</a></li>
+                  </ul>                
+              </nav>
+
+            </div>
           </header>
         </div>
         <!-- /example -->
         <div class="highlight">
-          <pre><code class="html">&lt;header>
-            
-  &lt;h1 class="logo-main">
-      &lt;a href="/">
-          &lt;img src="http://placehold.it/180x160">
-      &lt;/a>
-  &lt;/h1>
+          <pre><code class="html">&lt;header style="background:url(http://placehold.it/1280x520/666666/cccccc&text=Fondo) center center no-repeat; background-size:100% auto;">
+    &lt;div class="container">
 
-  &lt;nav id="main-nav" class="navbar navbar-default nav-justified" role="navigation">
-    &lt;div class="container-fluid">
+      &lt;h1 id="logo-main">
+        &lt;a href="/">
+          &lt;img src="http://placehold.it/220x200&text=Logo" alt="Gobierno de Chile">
+        &lt;/a>
+      &lt;/h1>
 
-      &lt;div class="navbar-header">
-        &lt;button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-header-collapse">
-          &lt;span class="sr-only">Toggle navigation&lt;/span>
-          &lt;span class="icon-bar">&lt;/span>
-          &lt;span class="icon-bar">&lt;/span>
-          &lt;span class="icon-bar">&lt;/span>
-        &lt;/button>
+      &lt;div class="barra-movil">
+        &lt;span class="titulo">Menú&lt;/span>
+        &lt;a class="menu-trigger">
+          &lt;div class="icono-menu">
+            &lt;span class="barra">&lt;/span>
+            &lt;span class="barra">&lt;/span>
+            &lt;span class="barra">&lt;/span>
+          &lt;/div>
+        &lt;/a>
       &lt;/div>
 
-      &lt;div class="collapse navbar-collapse" id="bs-example-header-collapse">
-        &lt;ul class="nav navbar-nav">
-          &lt;li class="active">&lt;a href="#">Inicio&lt;/a>&lt;/li>
-          &lt;li>&lt;a href="#">Presidenta&lt;/a>&lt;/li>
-          &lt;li class="dropdown">
-            &lt;a href="#" class="dropdown-toggle" data-toggle="dropdown">La Moneda &lt;span class="caret">&lt;/span>&lt;/a>
-            &lt;ul class="dropdown-menu" role="menu">
-              &lt;li>&lt;a href="#">Visitas Guiadas&lt;/a>&lt;/li>
-              &lt;li>&lt;a href="#">Historia del Palacio&lt;/a>&lt;/li>
-              &lt;li>&lt;a href="#">Cambio de Guardia&lt;/a>&lt;/li>
-            &lt;/ul>
-          &lt;/li>
-          &lt;li class="dropdown">
-            &lt;a href="#" class="dropdown-toggle" data-toggle="dropdown">Autoridades &lt;span class="caret">&lt;/span>&lt;/a>
-            &lt;ul class="dropdown-menu" role="menu">
-              &lt;li>&lt;a href="#">Ministros y Ministras&lt;/a>&lt;/li>
-              &lt;li>&lt;a href="#">Intendentes&lt;/a>&lt;/li>
-              &lt;li>&lt;a href="#">Subsecretarios y Subsecretarias&lt;/a>&lt;/li>
-            &lt;/ul>
-          &lt;/li>
-          &lt;li>&lt;a href="#">Prensa Presidencia&lt;/a>&lt;/li>
-          &lt;li>&lt;a href="#">Escríbenos&lt;/a>&lt;/li>
-          &lt;li>&lt;a href="#">English Version&lt;/a>&lt;/li>
-        &lt;/ul>
-      &lt;/div>
+      &lt;nav class="menu-principal">
+          &lt;ul class="list-unstyled">
+            &lt;li>&lt;a href="#">Ítem 1&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">Ítem 2&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">Ítem 3&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">Ítem 4&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="#">Ítem 5&lt;/a>&lt;/li>
+          &lt;/ul>                
+      &lt;/nav>
 
     &lt;/div>
-  &lt;/nav>
-
-&lt;/header></code></pre>
+  &lt;/header></code></pre>
         </div>
         <h2 id="footer-gobcl-full">Footer full</h2>
         <p>Para un footer completo, con menús y links en la parte inferior, usa el siguiente markup. Nuevamente, no olvides reemplazar los ítems y sus links por los que correspondan. Se pueden agregar o quitar listas de links simplemente agregando un div con clase <code>.lista</code>, más la estructura interna que se ve en el código a continuación.</p>
@@ -7075,6 +7045,7 @@ title: Bootstrap
 
 &lt;/footer></code></pre>
         </div>
+
         <h2 id="contenedor-tarjeta">Contenedor tarjeta</h2>
         <p>Para cualquier elemento sin estilo y sin un contenedor, se recomienda usarlo dentro de un div con la clase <code>.tarjeta</code>, que le dará un padding, color de fondo y borde acorde a los estilos de gobstrap. De esta manera se puede presentar información fácilmente, contener otros elementos o construir nuevos módulos a partir de este elemento base.</p>
         <div class="bs-example" style="background:#f1f1f1">
@@ -7088,6 +7059,7 @@ title: Bootstrap
   &lt;span>Lorem ipsum dolor sit amet&lt;/span>
 &lt;/div></code></pre>
         </div>
+
         <h2 id="tarjeta-full">Tarjeta Full</h2>
         <p>A partir de un elemento <code>.tarjeta</code> se pueden construir otro elementos modulares más complejos. Por ejemplo, agregándole <code>.tarjeta-full</code>, se crea un elemento modular que sirve para presentar información con una fotografía destacada, como una noticia o un anuncio importante. La variación de la fotografía puede ser variable, pero se recomienda usar imágenes apaisadas para no hacer crecer mucho el elemento.</p>
         <div class="bs-example" style="background:#f1f1f1">
@@ -7123,6 +7095,7 @@ title: Bootstrap
   &lt;/div>
 &lt;/div></code></pre>
         </div>
+
         <h2 id="tarjeta-horizontal-12">Tarjeta horizontal - 12 columnas</h2>
         <p>Así mismo se puede usar la clase <code>.tarjeta-horizontal</code> junto a <code>.tarjeta</code> para un módulo con fotografía destacada y título, pero sin texto. En este caso, la fotografía debe mantener una relación de aspecto de 16:9 (1920x1080, 1280x720, etc). Si se quiere usar otro formato, se puede modificar el alto del módulo, pero se recomienda usar el predeterminado para evitar problemas en distintos dispositivos.</p>
         <div class="bs-example" style="background:#f1f1f1">
@@ -7156,6 +7129,7 @@ title: Bootstrap
   &lt;/div>
 &lt;/div></code></pre>
         </div>
+
         <h2 id="tarjeta-horizontal-8">Tarjeta horizontal - 8 columnas</h2>
         <p>Cuando la <code>.tarjeta-horizontal</code> está dentro de un <code>.col-md-8</code>, se adapta para visualizarse correctamente en ese formato. Atención con el largo del texto, para que la caja de contenido no se desarme o no desaparezca texto.</p>
         <div class="bs-example" style="background:#f1f1f1">
