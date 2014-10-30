@@ -7,9 +7,9 @@
 
 <title>
   {% if page.title == "Bootstrap" %}
-    {{ page.title }}
+    {{ "Gobstrap &middot; Documentación" }}
   {% else %}
-    {{ page.title }} &middot; Bootstrap
+    {{ page.title }} &middot; Documentación
   {% endif %}
 </title>
 
@@ -64,6 +64,8 @@
     .col-md-8 .tarjeta .contenido {width:268px;}
   }
   @media only screen and (min-width:1020px) {
+    nav.menu-principal {width:98%;}
+    #logo-main {padding-top:0;}
     .col-md-12 .tarjeta .contenido {width:268px;}
     .tarjeta.tarjeta-full .contenido {width:100%;}
   }
