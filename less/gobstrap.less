@@ -1996,3 +1996,74 @@ footer {
 		height:auto;
 	}
 }
+
+// Widget Toggeable
+.widget-toggeable {
+	margin-bottom:25px;
+	.trigger {
+		width:100%;
+		display:block;
+		background:@gray-lighter;
+		border-bottom:2px solid @gray-light;
+		padding:14px 10px 8px 15px;
+		background:#fff;
+		.gobcl;
+		cursor:pointer;
+		color:@gray;
+		&:hover {
+			text-decoration:none;
+			border-bottom:2px solid @gray;
+			span.icono {
+				background-position:top right;
+			}
+		}
+		&.on, &:active {
+			span.icono {
+				background-position:bottom left;
+			}
+			&:hover {
+				span.icono {
+					background-position:bottom right;
+				}
+			}
+		}
+	}
+	.lista-toggeable {
+		background:@gray-light;
+		color:#fff;
+		max-height:250px;
+		overflow-x:hidden;
+		overflow-y:scroll;
+		display:none;
+		ul {
+			margin-bottom:0;
+			li {
+				a {
+					display:block;
+					padding:0 10px;
+					color:#fff;
+					&:hover {
+						background:@gray;
+						text-decoration:none;
+						span {
+							border-bottom-color:transparent;
+						}
+					}
+					span {
+						display:block;
+						padding:10px;
+						border-bottom:1px solid #A1AAAF;
+						font-size:12px;
+					} 
+				}
+				&:last-of-type {
+					a {
+						span {
+							border-bottom:none;
+						}
+					}
+				}
+			}
+		}
+	}
+}
