@@ -7170,14 +7170,15 @@ title: Bootstrap
           <h4>Atención con el uso</h4>
           <p>Debido a sus características de alto y ancho, los módulos <code>.tarjeta-full</code> y <code>.tarjeta-horizontal</code> están diseñadas para ser usadas en condiciones específicas: <code>.tarjeta-full</code> dentro de un <code>.col-md-12</code> y <code>.tarjeta-horizontal</code> dentro de <code>.col-md-12</code> o <code>.col-md-8</code>. Para usarlo en otras opciones de grilla, es necesario revisar y adaptar -cuando corresponda- los estilos en gobstrap.less.</p>
         </div>
-        
-        <h2 id="contenedor-tarjeta">Widget de lista toggeable</h2>
-        <p></p>
+
+        <h2 id="lista-colapsable">Lista colapsable</h2>
+        <p>Puedes hacer una lista colapsable que empieza oculta y se muestra al apretar el elemento que la activa y hace de encabezado y título de la lista. La lista se muestra con un alto máximo de 250px y pasado ese largo se muestra un scroll. Este elemento funciona con JavaScript.</p>
         <div class="bs-example" style="background:#f1f1f1">
-          <div class="widget-toggeable">
-            <a class="trigger"><strong>Lista</strong> de ítems</a>
-            <div class="lista-toggeable">
-              <ul class="list-unstyled">
+          
+          <div class="lista-colapsable">
+            <a class="trigger collapsed" data-toggle="collapse" href="#listacolapsable1" aria-expanded="false" aria-controls="listacolapsable1"><strong>Lista</strong> de ítems</a>
+            <div id="listacolapsable1" class="lista collapse" aria-expanded="false">
+              <ul>
                 <li><a href="#"><span>Ítem 1</span></a></li>
                 <li><a href="#"><span>Ítem 2</span></a></li>
                 <li><a href="#"><span>Ítem 3</span></a></li>
@@ -7190,13 +7191,14 @@ title: Bootstrap
               </ul>
             </div>
           </div>
+
         </div>
         <!-- /example -->
         <div class="highlight">
-          <pre><code class="html">&lt;div class="widget-toggeable">
-  &lt;a class="trigger">&lt;strong>Lista&lt;/strong> de ítems&lt;/a>
-  &lt;div class="lista-toggeable">
-    &lt;ul class="list-unstyled">
+          <pre><code class="html">&lt;div class="lista-colapsable">
+  &lt;a class="trigger collapsed" data-toggle="collapse" href="#listacolapsable1" aria-expanded="false" aria-controls="listacolapsable1">&lt;strong>Lista&lt;/strong> de ítems&lt;/a>
+  &lt;div id="listacolapsable1" class="lista collapse" aria-expanded="false">
+    &lt;ul>
       &lt;li>&lt;a href="#">&lt;span>Ítem 1&lt;/span>&lt;/a>&lt;/li>
       &lt;li>&lt;a href="#">&lt;span>Ítem 2&lt;/span>&lt;/a>&lt;/li>
       &lt;li>&lt;a href="#">&lt;span>Ítem 3&lt;/span>&lt;/a>&lt;/li>
