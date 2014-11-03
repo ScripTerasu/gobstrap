@@ -2029,7 +2029,7 @@ footer {
 		}
 	}
 	.lista-toggeable {
-		background:@gray-light;
+		background:@gray;
 		color:#fff;
 		max-height:250px;
 		overflow-x:hidden;
@@ -2043,7 +2043,7 @@ footer {
 					padding:0 10px;
 					color:#fff;
 					&:hover {
-						background:@gray;
+						background:@gray-dark;
 						text-decoration:none;
 						span {
 							border-bottom-color:transparent;
@@ -2052,7 +2052,7 @@ footer {
 					span {
 						display:block;
 						padding:10px;
-						border-bottom:1px solid #A1AAAF;
+						border-bottom:1px solid lighten(@gray, 10%);
 						font-size:12px;
 					} 
 				}
