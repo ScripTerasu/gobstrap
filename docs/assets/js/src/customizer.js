@@ -7,6 +7,9 @@
  */
 
 window.onload = function () { // wait for load in a dumb way because B-0
+
+  'use strict';
+  
   var cw = '/*!\n' +
            ' * Bootstrap v3.1.1 (http://getbootstrap.com)\n' +
            ' * Copyright 2011-2014 Twitter, Inc.\n' +
