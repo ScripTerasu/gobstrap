@@ -20,14 +20,12 @@ header h1#logo-main {padding-top:0;}
 .color-swatches .brand-info{background-color:#00b4ff}
 
 @media only screen and (min-width:740px) {
-  .col-md-8 .tarjeta .contenido {width:300px;}
+  .col-md-8 > .tarjeta .contenido {width:320px;}
 }
 @media only screen and (min-width:768px) {
-  .col-md-8 .tarjeta .contenido {width:268px;}
+  .col-md-8 > .tarjeta .contenido {width:288px;}
 }
 @media only screen and (min-width:1020px) {
-  nav.menu-principal {width:98%;}
-  #logo-main {padding-top:0;}
-  .col-md-12 .tarjeta .contenido {width:268px;}
-  .tarjeta.tarjeta-full .contenido {width:100%;}
+  .tarjeta.tarjeta-horizontal .contenido {width:288px;}
+  .col-md-8 > .tarjeta .contenido {width:281px;}
 }
