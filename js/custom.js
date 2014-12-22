@@ -13,17 +13,15 @@
   // $(".header-gobcl").button('toggle').addClass('hola')
 
 
-    $('.navbar-collapse').on('shown.bs.collapse', function (e) {
-         $('.header-gobcl #logo-main').addClass('off');
-         $('.header-gobcl #logo-main').removeClass('on');
-         
-    });
+  $('.navbar-collapse').on('shown.bs.collapse', function () {
+    $('.header-gobcl #logo-main').addClass('off');
+    $('.header-gobcl #logo-main').removeClass('on');
+  });
 
-    $('.navbar-collapse').on('hidden.bs.collapse', function (e) {
-        $('.header-gobcl #logo-main').addClass('on');
-         $('.header-gobcl #logo-main').removeClass('off');
-        
-    });
+  $('.navbar-collapse').on('hidden.bs.collapse', function () {
+    $('.header-gobcl #logo-main').addClass('on');
+    $('.header-gobcl #logo-main').removeClass('off');
+  });
 
 
 }(jQuery);

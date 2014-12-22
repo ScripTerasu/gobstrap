@@ -10,6 +10,6 @@
   "laxbreak" : true,
   "nonbsp"   : true,
   "strict"   : true,
-  "undef"    : true,
+  "undef"    : false,
   "unused"   : true
 }
