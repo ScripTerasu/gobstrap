@@ -9,11 +9,6 @@
 
     <link href="../../dist/css/gobstrap.min.css" rel="stylesheet">
 
-    <style type="text/css">
-      footer .banda-bicolor {width:100%; height:2px;}
-      footer .bottom .banda-bicolor {width:170px; height:20px;}
-    </style>
-
   </head>
 
   <body role="document">
@@ -27,7 +22,7 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));</script>
 
-  <header style="background:url(http://placehold.it/1280x520/666666/cccccc&text=Fondo) center center no-repeat; background-size:100% auto;">
+  <header class="header-gobcl" style="background-image:url(http://placehold.it/1280x580/666666/cccccc&text=Fondo)">
     <div class="container">
 
       <h1 id="logo-main">
@@ -36,25 +31,52 @@
         </a>
       </h1>
 
-      <div class="barra-movil">
-        <span class="titulo">Menú</span>
-        <a class="menu-trigger">
-          <div class="icono-menu">
-            <span class="barra"></span>
-            <span class="barra"></span>
-            <span class="barra"></span>
-          </div>
-        </a>
-      </div>
-
-      <nav class="menu-principal">
-          <ul class="list-unstyled">
+      <nav id="navbar-example" class="navbar navbar-default navbar-static" role="navigation">
+        <div class="navbar-header">
+          <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-example-js-navbar-collapse">
+            <span class="sr-only">Mostrar menú</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse bs-example-js-navbar-collapse">
+          <ul class="nav navbar-nav">
             <li><a href="#">Ítem 1</a></li>
+            <li class="dropdown">
+              <a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/">Acción</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/">Otra acción</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/">Algo más aquí</a></li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/">Link separado</a></li>
+              </ul>
+            </li>
             <li><a href="#">Ítem 2</a></li>
             <li><a href="#">Ítem 3</a></li>
+            <li class="dropdown">
+              <a id="drop2" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+                <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu" role="menu" aria-labelledby="drop2">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/">Acción</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/">Otra acción</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/">Algo más aquí</a></li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/">Link separado</a></li>
+              </ul>
+            </li>
             <li><a href="#">Ítem 4</a></li>
             <li><a href="#">Ítem 5</a></li>
-          </ul>                
+            <li><a href="#">Ítem 6</a></li>
+            <li><a href="#">Ítem 7</a></li>
+          </ul>
+        </div>
       </nav>
 
     </div>
@@ -81,15 +103,81 @@
     </div>
 
     <div class="row">
-      <div class="col-md-12">
-        <div class="tarjeta text-center">
-          <h3>Lorem ipsum dolor sit amet, consectetur adipiscing elit</h3>
-          <p>Cras maximus ante et bibendum vestibulum. Nunc et dictum magna. Ut vel laoreet nibh. Cras lacinia diam tincidunt lorem pretium congue. Donec malesuada sem erat, sit amet dictum turpis lacinia sit amet. Pellentesque consectetur ante urna, ut condimentum sapien suscipit vel.</p>
+
+      <div class="col-md-8">
+
+        <div class="tarjeta tarjeta-horizontal">
+          <div class="imagen">
+            <a href="#"><img src="http://placehold.it/1920x1080" alt=""></a>
+          </div>
+          <div class="contenido clearfix">
+            <div class="titulo">
+              <h4><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis pretium seme, turpis mi</a></h4>
+            </div>
+            <div class="texto">
+              <span class="fecha">11 de marzo de 2014</span>
+            </div>
+          </div>
         </div>
+
+        <div class="tarjeta tarjeta-horizontal">
+          <div class="imagen">
+            <a href="#"><img src="http://placehold.it/1920x1080" alt=""></a>
+          </div>
+          <div class="contenido clearfix">
+            <div class="titulo">
+              <h4><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis pretium seme, turpis mi</a></h4>
+            </div>
+            <div class="texto">
+              <span class="fecha">11 de marzo de 2014</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="tarjeta tarjeta-horizontal">
+          <div class="imagen">
+            <a href="#"><img src="http://placehold.it/1920x1080" alt=""></a>
+          </div>
+          <div class="contenido clearfix">
+            <div class="titulo">
+              <h4><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis pretium seme, turpis mi</a></h4>
+            </div>
+            <div class="texto">
+              <span class="fecha">11 de marzo de 2014</span>
+            </div>
+          </div>
+        </div>
+
       </div>
+
+      <div class="col-md-4">
+
+        <div class="tarjeta">
+          Sidebar
+        </div>
+
+        <div class="lista-colapsable">
+          <a class="trigger collapsed" data-toggle="collapse" href="#listacolapsable1" aria-expanded="false" aria-controls="listacolapsable1"><strong>Lista</strong> de ítems</a>
+          <div id="listacolapsable1" class="lista collapse" aria-expanded="false">
+            <ul>
+              <li><a href="#"><span>Ítem 1</span></a></li>
+              <li><a href="#"><span>Ítem 2</span></a></li>
+              <li><a href="#"><span>Ítem 3</span></a></li>
+              <li><a href="#"><span>Ítem 4</span></a></li>
+              <li><a href="#"><span>Ítem 5</span></a></li>
+              <li><a href="#"><span>Ítem 6</span></a></li>
+              <li><a href="#"><span>Ítem 7</span></a></li>
+              <li><a href="#"><span>Ítem 8</span></a></li>
+              <li><a href="#"><span>Ítem 9</span></a></li>
+            </ul>
+          </div>
+        </div>
+        
+      </div>
+
     </div>
 
-    <footer>
+    <footer class="footer-gobcl">
 
       <div class="banda-bicolor"></div>
 
@@ -122,17 +210,17 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="http://getbootstrap.com/dist/js/bootstrap.min.js"></script>
+    <script src="../../../dist/js/gobstrap.js"></script>
 
     <script>
-      $(document).ready(function() {
-        $("header .barra-movil a.menu-trigger").click(function() {
-          $("header .barra-movil span.titulo").toggleClass("on");
-          $(this).toggleClass("on");
-          $("header #logo-main").toggleClass("off");
-          $("nav.menu-principal").slideToggle("fast");
-        });
-      });
+      // $(document).ready(function() {
+      //   $("header .barra-movil a.menu-trigger").click(function() {
+      //     $("header .barra-movil span.titulo").toggleClass("on");
+      //     $(this).toggleClass("on");
+      //     $("header #logo-main").toggleClass("off");
+      //     $("nav.menu-principal").slideToggle("fast");
+      //   });
+      // });
     </script>
 
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
