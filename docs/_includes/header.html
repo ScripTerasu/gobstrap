@@ -4,7 +4,13 @@
 <meta name="description" content="">
 <meta name="keywords" content="HTML, CSS, JS, JavaScript, framework, bootstrap, front-end, frontend, web development">
 
-<title>{{ page.title }}</title>
+<title>
+  {% if page.layout == "home" %}
+    {{ page.title }}
+  {% else %}
+    {{ page.title }} &middot; Gobstrap
+  {% endif %}
+</title>
 
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
 
@@ -13,12 +19,12 @@
 
 {% if page.layout == 'home' %}
 <!-- Home CSS -->
-<link href="../dist/css/gobstrap-home.css" rel="stylesheet">
+<link href="assets/css/src/gobstrap-home.css" rel="stylesheet">
 {% endif %}
 
-{% if page.layout == 'documentacion' %}
+{% if page.layout == 'docs' %}
 <!-- Documentacion CSS -->
-<link href="../dist/css/gobstrap-docs.css" rel="stylesheet">
+<link href="../assets/css/src/gobstrap-docs.css" rel="stylesheet">
 <!-- Documentation extras -->
 <link href="../assets/css/docs.min.css" rel="stylesheet">
 {% endif %}
