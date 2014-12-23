@@ -9,29 +9,30 @@
  * details, see http://creativecommons.org/licenses/by/3.0/.
  */
 
+/* global ZeroClipboard */
 
 !function ($) {
-
   'use strict';
 
   $(function () {
 
+    // Scrollspy
     var $window = $(window)
     var $body   = $(document.body)
 
     $body.scrollspy({
       target: '.bs-docs-sidebar'
     })
-
     $window.on('load', function () {
       $body.scrollspy('refresh')
     })
 
+    // Kill links
     $('.bs-docs-container [href=#]').click(function (e) {
       e.preventDefault()
     })
 
-    // back to top
+    // Sidenav affixing
     setTimeout(function () {
       var $sideBar = $('.bs-docs-sidebar')
 
@@ -55,12 +56,44 @@
       $('.bs-top').affix()
     }, 100)
 
-    // tooltip demo
+    // theme toggler
+    ;(function () {
+      var stylesheetLink = $('#bs-theme-stylesheet')
+      var themeBtn = $('.bs-docs-theme-toggle')
+
+      var activateTheme = function () {
+        stylesheetLink.attr('href', stylesheetLink.attr('data-href'))
+        themeBtn.text('Disable theme preview')
+        localStorage.setItem('previewTheme', true)
+      }
+
+      if (localStorage.getItem('previewTheme')) {
+        activateTheme()
+      }
+
+      themeBtn.click(function () {
+        var href = stylesheetLink.attr('href')
+        if (!href || href.indexOf('data') === 0) {
+          activateTheme()
+        } else {
+          stylesheetLink.attr('href', '')
+          themeBtn.text('Preview theme')
+          localStorage.removeItem('previewTheme')
+        }
+      })
+    })();
+
+    // Tooltip and popover demos
     $('.tooltip-demo').tooltip({
       selector: '[data-toggle="tooltip"]',
       container: 'body'
     })
+    $('.popover-demo').popover({
+      selector: '[data-toggle="popover"]',
+      container: 'body'
+    })
 
+    // Demos within modals
     $('.tooltip-test').tooltip()
     $('.popover-test').popover()
 
@@ -120,23 +153,24 @@
       client.setText(highlight.text())
     })
 
-    // popover demo
-    $('.bs-docs-popover').popover()
-
-    // Popover dismiss on next click
-    $('.bs-docs-popover-dismiss').popover({
-      trigger: 'focus'
+    // Notify copy success and reset tooltip title
+    zeroClipboard.on('complete', function () {
+      htmlBridge
+        .attr('title', 'Copied!')
+        .tooltip('fixTitle')
+        .tooltip('show')
+        .attr('title', 'Copy to clipboard')
+        .tooltip('fixTitle')
     })
 
-    // button state demo
-    $('#loading-example-btn')
-      .click(function () {
-        var btn = $(this)
-        btn.button('loading')
-        setTimeout(function () {
-          btn.button('reset')
-        }, 3000)
-      })
+    // Notify copy failure
+    zeroClipboard.on('noflash wrongflash', function () {
+      htmlBridge
+        .attr('title', 'Flash required')
+        .tooltip('fixTitle')
+        .tooltip('show')
+    })
+
   })
 
 }(jQuery)
