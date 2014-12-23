@@ -10,20 +10,24 @@
 
 <title>
   
-    Bootstrap &middot; The world's most popular mobile-first and responsive front-end framework.
+    Gobstrap &middot; Documentación &middot; Gobstrap
   
 </title>
 
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
 
 <!-- Bootstrap core CSS - Modificado Gobstrap -->
+
 <link href="../dist/css/gobstrap.min.css" rel="stylesheet">
 
 
-<!-- Home CSS -->
-<link href="assets/css/src/gobstrap-home.css" rel="stylesheet">
 
 
+
+<!-- Documentacion CSS -->
+<link href="../assets/css/src/gobstrap-docs.css" rel="stylesheet">
+<!-- Documentation extras -->
+<link href="../assets/css/docs.min.css" rel="stylesheet">
 
 
 <!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -51,180 +55,815 @@
 </script>
   </head>
   <body>
+  	<div class="container theme-showcase" role="main">
+    <div class="col-md-12" role="main">
 
-      <header>
+      <div class="bs-docs-section"> 
+
+  <h1 id="overview" class="page-header">Vista General</h1> 
+
+  <p class="lead">Una revisión del uso, la infraestructura y el enfoque en un desarrollo web mejor, más rápido y más sólido de <strong>Gobstrap</strong>.</p> 
+
+  <h3 id="overview-use">Cómo usarlo</h3> 
+
+<p>Para comenzar a usar <strong>Gobstrap</strong>, basta con llamar al archivo compilado dentro del <code>&lt;header&gt;</code>.</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;link</span> <span class="na">href=</span><span class="s">"../dist/css/gobstrap.min.css"</span> <span class="na">rel=</span><span class="s">"stylesheet"</span><span class="nt">&gt;</span></code></pre></div> 
+
+<h3 id="overview-doctype">Doctype HTML5</h3> 
+
+<p>Gobstrap usa ciertos elementos HTML y propiedades CSS que requieren el uso del doctype HTML5. Debes incluirlo en el inicio de todos tus proyectos.</p> 
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="cp">&lt;!DOCTYPE html&gt;</span> 
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"en"</span><span class="nt">&gt;</span> 
+... 
+<span class="nt">&lt;/html&gt;</span></code></pre></div>
+  <h3 id="overview-mobile">Mobile first</h3>
+
+<p>Gobstrap es mobile friendly desde el principio. En vez de añadir estilos especiales para dispositivos móviles, estos están incluídos en su núcleo. Gobstrap es mobile first, lo que significa que se pueden encontrar estilos para dispositivos móviles en toda la librería, en vez de separados en un archivo especial.</p>
+
+<p>Para asegurar la correcta visualización e interacciones, <strong>añade el meta tag de viewport </strong>a tu <code>&lt;head&gt;</code>.</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1"</span><span class="nt">&gt;</span></code></pre></div>
+
+<p>Puedes desabilitar el zoom en dispositivos móviles añadiendo <code>user-scalable=no</code> al meta tag viewport. Esto hará que los usuarios sólo puedan hacer scroll, resultando en un sitio que se parece más a una aplicación nativa. De todas maneras, no recomendamos esto en todos los sitios, así que procura usarlo con prudencia.</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"</span><span class="nt">&gt;</span></code></pre></div>
+  <h3 id="overview-type-links">Tipografías y links</h3>
+
+<p>Gobstrap establece estilos básicos globales, de tipografías y links. Principalmente:</p>
+<ul>
+  <li>Fija <code>background-color: #fff;</code> en el <code>body</code></li>
+  <li>Usa los atributos <code>@font-family-base</code>, <code>@font-size-base</code>, y <code>@line-height-base</code> como nuestra base tipográfica</li>
+  <li>Fija el color global de los links via <code>@link-color</code> y aplica subrayado sólo en el estado <code>:hover</code></li>
+</ul>
+
+<p>Estos estilos pueden encontrarse en el archivo <code>scaffolding.less</code>.</p>
+  <h3 id="overview-normalize">Normalize.css</h3>
+
+<p>Para una visualización lo más consistente posible en distintos navegadores (cross-browsing), Gobstrap usa <a href="http://necolas.github.io/normalize.css/" target="_blank">Normalize.css</a>, un proyecto de <a href="http://twitter.com/necolas" target="_blank">Nicolas Gallagher</a> y <a href="http://twitter.com/jon_neal" target="_blank">Jonathan Neal</a>.</p>
+  <h3 id="overview-container">Contenedores</h3>
+
+<p>Gobstrap requiere un elemento contenedor para envolver los contenidos del sitio y alojar el sistema de grillas. Puedes escoger uno de dos contenedores para usar en tus proyectos. Ten en cuenta que debido al <code>padding</code> y otros elementos, ninguno de los contenedores son anidables.</p>
+
+<p>Usa <code>.container</code> para un contenedor responsivo de ancho fijo.</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+  ...
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+<p>Usa <code>.container-fluid</code> para un contenedor del ancho completo del viewport.</p>
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container-fluid"</span><span class="nt">&gt;</span>
+  ...
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+</div>
+<div class="bs-docs-section">
+
+  <h1 id="grid" class="page-header">Sistema de Grilla</h1>
+
+  <p class="lead">Gobstrap inluye una grilla fluida, responsiva y mobile first que se escala apropiadamente hasta 12 columnas a medida que el dispositivo o la ventana del navegador crece. Esta grilla incluye <a href="#grid-example-basic">clases predefinidas</a> para facilitar las opciones de layout, y también <a href="#grid-less">mixins para generar layouts más semánticos</a>.</p>
+
+  <h3 id="grid-intro">Introducción</h3>
+
+  <p>Las grillas son usadas para la creación de layouts en sitios web mediante una serie de filas y columnas que alojan el contenido. El sistema de Gobstrap funciona de la siguiente manera:</p>
+
+  <ul>
+    <li>Las filas deben ser incluidas dentro de un <code>.container</code> (ancho fijo) o <code>.container-fluid</code> (ancho completo) para alineamiento y padding correcto.</li>
+    <li>Usa las filas para crear grupos horizontales de columnas.</li>
+    <li>El contenido siempre debe ser incluido dentro de columnas, y sólo columnas pueden ser elementos inmediatamente descendientes de las filas.</li>
+    <li>Hay clases predefinidas de la grilla, como <code>.row</code> y <code>.col-xs-4</code> para una rápida creación de layouts. También pueden usarse mixins de less para layouts más semánticos.</li>
+    <li>Las columnas crean "gutters" (espacios entre las columnas) mediante <code>padding</code>. Ese padding es compensado en la primera y la última columna de cada fila, mediante un margen negativo en las <code>.row</code>.</li>
+    <li>Ese margen negativo es la razón de por qué los ejemplos más abajo están fuera de la fila. Es para que el contenido en las columnas de la grilla esté alineado con el contenido fuera de la grilla.</li>
+    <li>Las columnas de la grilla se crean especificando el número de columnas que quieres ocupar, de un total del 12. Por ejemplo, 3 columnas iguales usarían tres <code>.col-xs-4</code>.</li>
+    <li>Si más de 12 columnas son puestas en una sola fila, cada grupo de columnas extra se acomplarán en una nueva línea, como un grupo.</li>
+    <li>Las clases de la grilla se aplican a dispositivos con anchos de pantalla iguales o más grandes que los breakpoints (puntos de quiebre), y sobreescriben clases para pantallas más pequeñas. Entonces, aplicar cualquier clase <code>.col-md-</code> a un elemento, no sólo afectará su estilo en dispositivos medianos, si no también en dispositivos grandes, si no tiene aplicado algún <code>.col-lg-</code>.</li>
+  </ul>
+
+  <p>Mira los ejemplos para aplicar correctamente estos principios a tu código.</p>
+
+  <h3 id="grid-media-queries">Media queries</h3>
+
+  <p>Gobstrap usa los siguientes media queries en sus archivos Less para crear los puntos de quiebre del sistema de grilla.</p>
+
+<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="cm">/* Dispositivos muy pequeños (teléfonos, menores a 740px) */</span>
+<span class="cm">/* No hay media queries, ya que este es el predeterminado en Gobstrap */</span>
+
+<span class="cm">/* Dispositivos pequeños (tablets) (740px y más) */</span>
+<span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="o">@</span><span class="nt">screen-sm-min</span><span class="o">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
+
+<span class="cm">/* Dispositivos medianos (computadores de escritorio/laptops, 1020px y más) */</span>
+<span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="o">@</span><span class="nt">screen-md-min</span><span class="o">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
+
+<span class="cm">/* Dispositivos grandes (pantallas grandes, 1300px y más) */</span>
+<span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="o">@</span><span class="nt">screen-lg-min</span><span class="o">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span></code></pre></div>
+
+  <p>Ocasionalmente extendemos estas media queries e incluimos <code>max-width</code> para limitar el CSS a un conjunto más reducido de dispositivos.</p>
+
+<div class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="k">@media</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="o">@</span><span class="nt">screen-xs-max</span><span class="o">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
+<span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="o">@</span><span class="nt">screen-sm-min</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="o">@</span><span class="nt">screen-sm-max</span><span class="o">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
+<span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="o">@</span><span class="nt">screen-md-min</span><span class="o">)</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="nd">:</span> <span class="o">@</span><span class="nt">screen-md-max</span><span class="o">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span>
+<span class="k">@media</span> <span class="o">(</span><span class="nt">min-width</span><span class="nd">:</span> <span class="o">@</span><span class="nt">screen-lg-min</span><span class="o">)</span> <span class="p">{</span> <span class="nc">...</span> <span class="p">}</span></code></pre></div>
+
+  <h3 id="grid-options">Opciones de Grilla</h3>
+
+  <p>Ve cómo funcionan el sistema de grilla de Gobstrap en distintos dispositivos con esta práctica tabla.</p>
+
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+
+      <thead>
+        <tr>
+          <th></th>
+          <th>
+            Dispositivos muy pequeños
+            <small>Teléfonos (&lt;740px)</small>
+          </th>
+
+          <th>
+            Dispositivos pequeños
+            <small>Tablets (≥740px)</small>
+          </th>
+
+          <th>
+            Dispositivos medianos
+            <small>Computadores de escritorio, laptops (≥1020px)</small>
+          </th>
+
+          <th>
+            Dispositivos grandes
+            <small>Computadores de escritorio, laptops (≥1300px)</small>
+          </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <th class="text-nowrap">Comportamiento de la grilla</th>
+          <td>Siempre horizontal</td>
+          <td colspan="3">Colapsada al principio, horizontal sobre puntos de quiebre</td>
+        </tr>
+
+        <tr>
+          <th class="text-nowrap">Ancho del contenedor</th>
+          <td>Ninguno (auto)</td>
+          <td>740px</td>
+          <td>1020px</td>
+          <td>1240px</td>
+        </tr>
+
+        <tr>
+          <th class="text-nowrap">Prefijo de clase</th>
+          <td><code>.col-xs-</code></td>
+          <td><code>.col-sm-</code></td>
+          <td><code>.col-md-</code></td>
+          <td><code>.col-lg-</code></td>
+        </tr>
+
+        <tr>
+          <th class="text-nowrap"># de columnas</th>
+          <td colspan="4">12</td>
+        </tr>
+
+        <tr>
+          <th class="text-nowrap">Ancho de la columna</th>
+          <td class="text-muted">Automático</td>
+          <td>~60px</td>
+          <td>~83px</td>
+          <td>~102px</td>
+        </tr>
+
+        <tr>
+          <th class="text-nowrap">Ancho del "gutter"</th>
+          <td colspan="4">20px (10px en cada lado de la columna)</td>
+        </tr>
+
+        <tr>
+          <th class="text-nowrap">Anidable</th>
+          <td colspan="4">Sí</td>
+        </tr>
+
+        <tr>
+          <th class="text-nowrap">Compensadores</th>
+          <td colspan="4">Sí</td>
+        </tr>
+
+        <tr>
+          <th class="text-nowrap">Arreglamiento de columnas</th>
+          <td colspan="4">Sí</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+</div>
+
+<div class="bs-docs-section">
+
+  <h1 id="elementos-gobcl" class="page-header">Elementos de gobcl</h1>
+
+  <h2 id="header-gobcl">Header</h2>
+
+<p>Uno de los elementos que más aporta a la congruencia gráfica de Gobierno de Chile es el header predeterminado. Para usarlo, copia el código debajo y reemplaza la imagen de muestra por el isologo que corresponda -que se ajustará a un ancho máximo de 180px-, los ítems del menú y sus links correspondientes. Preocúpate de no incluir demasiados ítems en el menú para una correcta visualización en todos los dispositivos.</p>
+
+<div class="bs-example">
+  <header class="header-gobcl" style="background-image:url(http://placehold.it/1280x580/666666/cccccc&amp;text=Fondo)">
+    <div class="container">
+      <h1 id="logo-main">
+        <a href="#">
+          <img src="http://placehold.it/220x200&amp;text=Logo" alt="Gobierno de Chile">
+        </a>
+      </h1>
+
+      <nav id="navbar-example" class="navbar navbar-default navbar-static" role="navigation">
+        <div class="navbar-header">
+          <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".bs-example-js-navbar-collapse">
+            <span class="sr-only">Mostrar menú</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+
+        <div class="collapse navbar-collapse bs-example-js-navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="#">Ítem 1</a></li>
+            <li class="dropdown">
+              <a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Dropdown <span class="caret"></span></a>
+
+              <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/">Acción</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/">Otra acción</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/">Algo más aquí</a></li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/">Link separado</a></li>
+              </ul>
+            </li>
+
+            <li><a href="#">Ítem 2</a></li>
+            <li><a href="#">Ítem 3</a></li>
+
+            <li class="dropdown">
+              <a id="drop2" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Dropdown <span class="caret"></span> </a>
+
+              <ul class="dropdown-menu" role="menu" aria-labelledby="drop2">
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/">Acción</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/">Otra acción</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/">Algo más aquí</a></li>
+                <li role="presentation" class="divider"></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="/">Link separado</a></li>
+              </ul>
+
+            </li>
+
+            <li><a href="#">Ítem 4</a></li>
+            <li><a href="#">Ítem 5</a></li>
+            <li><a href="#">Ítem 6</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+</div>
+<!-- /example -->
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;header</span> <span class="na">class=</span><span class="s">"header-gobcl"</span> <span class="na">style=</span><span class="s">"background-image:url(http://placehold.it/1280x580/666666/cccccc&amp;text=Fondo)"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"container"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;h1</span> <span class="na">id=</span><span class="s">"logo-main"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/220x200&amp;text=Logo"</span> <span class="na">alt=</span><span class="s">"Gobierno de Chile"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;/a&gt;</span>
+    <span class="nt">&lt;/h1&gt;</span>
+
+    <span class="nt">&lt;nav</span> <span class="na">id=</span><span class="s">"navbar-example"</span> <span class="na">class=</span><span class="s">"navbar navbar-default navbar-static"</span> <span class="na">role=</span><span class="s">"navigation"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"navbar-header"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;button</span> <span class="na">class=</span><span class="s">"navbar-toggle collapsed"</span> <span class="na">type=</span><span class="s">"button"</span> <span class="na">data-toggle=</span><span class="s">"collapse"</span> <span class="na">data-target=</span><span class="s">".bs-example-js-navbar-collapse"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Mostrar menú<span class="nt">&lt;/span&gt;</span>
+          <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon-bar"</span><span class="nt">&gt;&lt;/span&gt;</span>
+          <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon-bar"</span><span class="nt">&gt;&lt;/span&gt;</span>
+          <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"icon-bar"</span><span class="nt">&gt;&lt;/span&gt;</span>
+        <span class="nt">&lt;/button&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"collapse navbar-collapse bs-example-js-navbar-collapse"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"nav navbar-nav"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Ítem 1<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+          <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"dropdown"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">id=</span><span class="s">"drop1"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"dropdown-toggle"</span> <span class="na">data-toggle=</span><span class="s">"dropdown"</span> <span class="na">aria-haspopup=</span><span class="s">"true"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span> Dropdown <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"caret"</span><span class="nt">&gt;&lt;/span&gt;&lt;/a&gt;</span>
+
+            <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"dropdown-menu"</span> <span class="na">role=</span><span class="s">"menu"</span> <span class="na">aria-labelledby=</span><span class="s">"drop1"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">role=</span><span class="s">"menuitem"</span> <span class="na">tabindex=</span><span class="s">"-1"</span> <span class="na">href=</span><span class="s">"/"</span><span class="nt">&gt;</span>Acción<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">role=</span><span class="s">"menuitem"</span> <span class="na">tabindex=</span><span class="s">"-1"</span> <span class="na">href=</span><span class="s">"/"</span><span class="nt">&gt;</span>Otra acción<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">role=</span><span class="s">"menuitem"</span> <span class="na">tabindex=</span><span class="s">"-1"</span> <span class="na">href=</span><span class="s">"/"</span><span class="nt">&gt;</span>Algo más aquí<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span> <span class="na">class=</span><span class="s">"divider"</span><span class="nt">&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">role=</span><span class="s">"menuitem"</span> <span class="na">tabindex=</span><span class="s">"-1"</span> <span class="na">href=</span><span class="s">"/"</span><span class="nt">&gt;</span>Link separado<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;/ul&gt;</span>
+          <span class="nt">&lt;/li&gt;</span>
+
+          <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Ítem 2<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+          <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Ítem 3<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+
+          <span class="nt">&lt;li</span> <span class="na">class=</span><span class="s">"dropdown"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;a</span> <span class="na">id=</span><span class="s">"drop2"</span> <span class="na">href=</span><span class="s">"#"</span> <span class="na">class=</span><span class="s">"dropdown-toggle"</span> <span class="na">data-toggle=</span><span class="s">"dropdown"</span> <span class="na">aria-haspopup=</span><span class="s">"true"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span><span class="nt">&gt;</span> Dropdown <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"caret"</span><span class="nt">&gt;&lt;/span&gt;</span> <span class="nt">&lt;/a&gt;</span>
+
+            <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"dropdown-menu"</span> <span class="na">role=</span><span class="s">"menu"</span> <span class="na">aria-labelledby=</span><span class="s">"drop2"</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">role=</span><span class="s">"menuitem"</span> <span class="na">tabindex=</span><span class="s">"-1"</span> <span class="na">href=</span><span class="s">"/"</span><span class="nt">&gt;</span>Acción<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">role=</span><span class="s">"menuitem"</span> <span class="na">tabindex=</span><span class="s">"-1"</span> <span class="na">href=</span><span class="s">"/"</span><span class="nt">&gt;</span>Otra acción<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">role=</span><span class="s">"menuitem"</span> <span class="na">tabindex=</span><span class="s">"-1"</span> <span class="na">href=</span><span class="s">"/"</span><span class="nt">&gt;</span>Algo más aquí<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span> <span class="na">class=</span><span class="s">"divider"</span><span class="nt">&gt;&lt;/li&gt;</span>
+              <span class="nt">&lt;li</span> <span class="na">role=</span><span class="s">"presentation"</span><span class="nt">&gt;&lt;a</span> <span class="na">role=</span><span class="s">"menuitem"</span> <span class="na">tabindex=</span><span class="s">"-1"</span> <span class="na">href=</span><span class="s">"/"</span><span class="nt">&gt;</span>Link separado<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;/ul&gt;</span>
+
+          <span class="nt">&lt;/li&gt;</span>
+
+          <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Ítem 4<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+          <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Ítem 5<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+          <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Ítem 6<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/nav&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/header&gt;</span></code></pre></div>
+  <h2 id="footer-gobcl-full">Footer full</h2>
+<p>Para un footer completo, con menús y links en la parte inferior, usa el siguiente markup. Nuevamente, no olvides reemplazar los ítems y sus links por los que correspondan. Se pueden agregar o quitar listas de links simplemente agregando un div con clase <code>.lista</code>, más la estructura interna que se ve en el código a continuación.</p>
+
+<div class="bs-example">
+  <footer class="footer-gobcl">
+
+    <div class="banda-bicolor">
+      <span class="azul"></span>
+      <span class="rojo"></span>
+    </div>
+
+    <div class="top">
+
+      <div class="listas">
+        <div class="lista">
+          <h5>Enlaces 1</h5>
+          <ul>
+            <li><a href="#">Item 1</a></li>
+            <li><a href="#">Item 2</a></li>
+            <li><a href="#">Item 3</a></li>
+            <li><a href="#">Item 4</a></li>
+            <li><a href="#">Item 5</a></li>
+            <li><a href="#">Item 6</a></li>
+            <li><a href="#">Item 7</a></li>
+          </ul>
+        </div>
+
+        <div class="lista">
+          <h5>Enlaces 2</h5>
+          <ul>
+            <li><a href="#">Item 1</a></li>
+            <li><a href="#">Item 2</a></li>
+            <li><a href="#">Item 3</a></li>
+            <li><a href="#">Item 4</a></li>
+            <li><a href="#">Item 5</a></li>
+          </ul>
+        </div>
+
+        <div class="lista">
+          <h5>Enlaces 3</h5>
+          <ul>
+            <li><a href="#">Item 1</a></li>
+            <li><a href="#">Item 2</a></li>
+            <li><a href="#">Item 3</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="sep"></div>
+
+    <div class="bottom">
+
+      <div class="pull-left">
+        <span>Dirección Lorem Ipsum 1234 - Teléfono: <a href="tel:+56212341234">+56 2 12341234</a></span>
+      </div>
+
+      <nav class="pull-right">
+        <ul class="list-inline">
+          <li><a href="#">Política de Privacidad</a></li>
+          <li><a href="#">Enlace 2</a></li>
+          <li><a href="#">Enlace 3</a></li>
+        </ul>
+      </nav>
+
+      <div class="clearfix"></div>
+
+      <div class="banda-bicolor">
+        <span class="azul"></span>
+        <span class="rojo"></span>
+      </div>
+    </div>
+
+  </footer>
+</div>
+<!-- /example -->
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bs-example"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;footer</span> <span class="na">class=</span><span class="s">"footer-gobcl"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"banda-bicolor"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"azul"</span><span class="nt">&gt;&lt;/span&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"rojo"</span><span class="nt">&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"top"</span><span class="nt">&gt;</span>
+
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"listas"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"lista"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;h5&gt;</span>Enlaces 1<span class="nt">&lt;/h5&gt;</span>
+          <span class="nt">&lt;ul&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Item 1<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Item 2<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Item 3<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Item 4<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Item 5<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Item 6<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Item 7<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+          <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"lista"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;h5&gt;</span>Enlaces 2<span class="nt">&lt;/h5&gt;</span>
+          <span class="nt">&lt;ul&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Item 1<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Item 2<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Item 3<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Item 4<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Item 5<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+          <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+
+        <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"lista"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;h5&gt;</span>Enlaces 3<span class="nt">&lt;/h5&gt;</span>
+          <span class="nt">&lt;ul&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Item 1<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Item 2<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+            <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Item 3<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+          <span class="nt">&lt;/ul&gt;</span>
+        <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"sep"</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bottom"</span><span class="nt">&gt;</span>
+
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pull-left"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span&gt;</span>Dirección Lorem Ipsum 1234 - Teléfono: <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"tel:+56212341234"</span><span class="nt">&gt;</span>+56 2 12341234<span class="nt">&lt;/a&gt;&lt;/span&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+
+      <span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"pull-right"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"list-inline"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Política de Privacidad<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+          <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Enlace 2<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+          <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Enlace 3<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+      <span class="nt">&lt;/nav&gt;</span>
+
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"clearfix"</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"banda-bicolor"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"azul"</span><span class="nt">&gt;&lt;/span&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"rojo"</span><span class="nt">&gt;&lt;/span&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;/footer&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+  <h2 id="footer-gobcl-simple">Footer simple</h2>
+<p>Para una versión simplificada del footer, sólo con la información y links necesarios, usa el siguiente código y actualiza la información correspondiente.</p>
+
+<div class="bs-example">
+  <footer class="footer-gobcl">
+
+    <div class="banda-bicolor">
+      <span class="azul"></span>
+      <span class="rojo"></span>
+    </div>
+
+    <div class="bottom">
+      <div class="pull-left">
+        <span>Dirección Lorem Ipsum 1234 - Teléfono: <a href="tel:+56212341234">+56 2 12341234</a></span>
+      </div>
+
+      <nav class="pull-right">
+        <ul class="list-inline">
+          <li><a href="#">Política de Privacidad</a></li>
+          <li><a href="#">Enlace 2</a></li>
+          <li><a href="#">Enlace 3</a></li>
+        </ul>
+      </nav>
+
+      <div class="clearfix"></div>
+
+      <div class="banda-bicolor">
+        <span class="azul"></span>
+        <span class="rojo"></span>
+      </div>
+    </div>
+  </footer>
+</div>
+
+  <!-- /example -->
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bs-example"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;footer</span> <span class="na">class=</span><span class="s">"footer-gobcl"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"banda-bicolor"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"azul"</span><span class="nt">&gt;&lt;/span&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"rojo"</span><span class="nt">&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bottom"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"pull-left"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span&gt;</span>Dirección Lorem Ipsum 1234 - Teléfono: <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"tel:+56212341234"</span><span class="nt">&gt;</span>+56 2 12341234<span class="nt">&lt;/a&gt;&lt;/span&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+
+      <span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"pull-right"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"list-inline"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Política de Privacidad<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+          <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Enlace 2<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+          <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Enlace 3<span class="nt">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="nt">&lt;/ul&gt;</span>
+      <span class="nt">&lt;/nav&gt;</span>
+
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"clearfix"</span><span class="nt">&gt;&lt;/div&gt;</span>
+
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"banda-bicolor"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"azul"</span><span class="nt">&gt;&lt;/span&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"rojo"</span><span class="nt">&gt;&lt;/span&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/footer&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+  <h2 id="contenedor-tarjeta">Contenedor tarjeta</h2>
+<p>Para cualquier elemento sin estilo y sin un contenedor, se recomienda usarlo dentro de un div con la clase <code>.tarjeta</code>, que le dará un padding, color de fondo y borde acorde a los estilos de gobstrap. De esta manera se puede presentar información fácilmente, contener otros elementos o construir nuevos módulos a partir de este elemento base.</p>
+
+<div class="bs-example" style="background:#f1f1f1">
+  <div class="tarjeta">Lorem ipsum dolor sit amet</div>
+</div>
+
+<!-- /example -->
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bs-example"</span> <span class="na">style=</span><span class="s">"background:#f1f1f1"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tarjeta"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+  <!-- /tarjeta-full-8 -->
+<h2 id="tarjeta-full">Tarjeta Full</h2>
+
+<p>A partir de un elemento <code>.tarjeta</code> se pueden construir otro elementos modulares más complejos. Por ejemplo, agregándole <code>.tarjeta-full</code>, se crea un elemento modular que sirve para presentar información con una fotografía destacada, como una noticia o un anuncio importante. La variación de la fotografía puede ser variable, pero se recomienda usar imágenes apaisadas para no hacer crecer mucho el elemento.</p>
+
+<div class="bs-example" style="background:#f1f1f1">
+  <div class="tarjeta tarjeta-full">
+
+    <div class="imagen">
+      <a href="#"><img src="http://placehold.it/1920x720" alt=""></a>
+    </div>
+
+    <div class="contenido clearfix">
+
+      <div class="titulo">
+        <h4><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis pretium seme, turpis mi mollis leo</a></h4>
+      </div>
+      <div class="texto">
+        <span class="fecha">11 de marzo de 2014</span>
+        <p>Ut ligula eros, tempus tempus felis et, finibus dignissim odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at feugiat libero. Praesent aliquet dui nunc, ut gravida libero condimentum a. Nam feugiat ante dui, at efficitur nibh fermentum vitae. Praesent rhoncus purus a nunc vehicula pretium.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /example -->
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tarjeta tarjeta-full"</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"imagen"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/1920x720"</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;&lt;/a&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"contenido clearfix"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"titulo"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;h4&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis pretium seme, turpis mi mollis leo<span class="nt">&lt;/a&gt;&lt;/h4&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"texto"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"fecha"</span><span class="nt">&gt;</span>11 de marzo de 2014<span class="nt">&lt;/span&gt;</span>
+      <span class="nt">&lt;p&gt;</span>Ut ligula eros, tempus tempus felis et, finibus dignissim odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at feugiat libero. Praesent aliquet dui nunc, ut gravida libero condimentum a. Nam feugiat ante dui, at efficitur nibh fermentum vitae. Praesent rhoncus purus a nunc vehicula pretium.<span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+<!-- /tarjeta-horizontal-8 -->
+<h2 id="tarjeta-horizontal-12">Tarjeta horizontal - 12 columnas</h2>
+
+<p>Así mismo se puede usar la clase <code>.tarjeta-horizontal</code> junto a <code>.tarjeta</code> para un módulo con fotografía destacada y título, pero sin texto. En este caso, la fotografía debe mantener una relación de aspecto de 16:9 (1920x1080, 1280x720, etc). Si se quiere usar otro formato, se puede modificar el alto del módulo, pero se recomienda usar el predeterminado para evitar problemas en distintos dispositivos.</p>
+<div class="bs-example" style="background:#f1f1f1">
+  <div class="tarjeta tarjeta-horizontal">
+    <div class="imagen">
+      <a href="#"><img src="http://placehold.it/1920x1080" alt=""></a>
+    </div>
+
+    <div class="contenido clearfix">
+      <div class="titulo">
+        <h4><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis pretium seme, turpis mi</a></h4>
+      </div>
+
+      <div class="texto">
+        <span class="fecha">11 de marzo de 2014</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- /example -->
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tarjeta tarjeta-horizontal"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"imagen"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/1920x1080"</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;&lt;/a&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"contenido clearfix"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"titulo"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;h4&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis pretium seme, turpis mi<span class="nt">&lt;/a&gt;&lt;/h4&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"texto"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"fecha"</span><span class="nt">&gt;</span>11 de marzo de 2014<span class="nt">&lt;/span&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
+
+<!-- /tarjeta-horizontal-8 -->
+<h2 id="tarjeta-horizontal-8">Tarjeta horizontal - 8 columnas</h2>
+
+<p>Cuando la <code>.tarjeta-horizontal</code> está dentro de un <code>.col-md-8</code>, se adapta para visualizarse correctamente en ese formato. Atención con el largo del texto, para que la caja de contenido no se desarme o no desaparezca texto.</p>
+
+<div class="bs-example" style="background:#f1f1f1">
+
+  <div class="col-md-8">
+
+    <div class="tarjeta tarjeta-horizontal">
+      <div class="imagen">
+        <a href="#"><img src="http://placehold.it/1920x1080" alt=""></a>
+      </div>
+
+      <div class="contenido clearfix">
+        <div class="titulo">
+          <h4><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis pretium seme, turpis mi</a></h4>
+        </div>
+
+        <div class="texto">
+          <span class="fecha">11 de marzo de 2014</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="clearfix"></div>
+
+</div>
+
+<!-- /example -->
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"col-md-8"</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"tarjeta tarjeta-horizontal"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"imagen"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">"http://placehold.it/1920x1080"</span> <span class="na">alt=</span><span class="s">""</span><span class="nt">&gt;&lt;/a&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"contenido clearfix"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"titulo"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;h4&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis pretium seme, turpis mi<span class="nt">&lt;/a&gt;&lt;/h4&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+
+      <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"texto"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"fecha"</span><span class="nt">&gt;</span>11 de marzo de 2014<span class="nt">&lt;/span&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+
+  <span class="nt">&lt;/div&gt;</span>
+
+<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"clearfix"</span><span class="nt">&gt;&lt;/div&gt;</span></code></pre></div>
+
+
+<div class="bs-callout bs-callout-info">
+  <h4>Atención con el uso</h4>
+  <p>Debido a sus características de alto y ancho, los módulos <code>.tarjeta-full</code> y <code>.tarjeta-horizontal</code> están diseñadas para ser usadas en condiciones específicas: <code>.tarjeta-full</code> dentro de un <code>.col-md-12</code> y <code>.tarjeta-horizontal</code> dentro de <code>.col-md-12</code> o <code>.col-md-8</code>. Para usarlo en otras opciones de grilla, es necesario revisar y adaptar -cuando corresponda- los estilos en gobstrap.less.</p>
+</div>
+  <h2 id="lista-colapsable">Lista colapsable</h2>
+<p>Puedes hacer una lista colapsable que empieza oculta y se muestra al apretar el elemento que la activa y hace de encabezado y título de la lista. La lista se muestra con un alto máximo de 250px y pasado ese largo se muestra un scroll. Este elemento funciona con JavaScript.</p>
+
+<div class="bs-example" style="background:#f1f1f1">
+  <div class="lista-colapsable">
+    <a class="trigger collapsed" data-toggle="collapse" href="#listacolapsable1" aria-expanded="false" aria-controls="listacolapsable1"><strong>Lista</strong> de ítems</a>
+
+    <div id="listacolapsable1" class="lista collapse" aria-expanded="false" role="listbox">
+      <ul>
+        <li><a href="#"><span>Ítem 1</span></a></li>
+        <li><a href="#"><span>Ítem 2</span></a></li>
+        <li><a href="#"><span>Ítem 3</span></a></li>
+        <li><a href="#"><span>Ítem 4</span></a></li>
+        <li><a href="#"><span>Ítem 5</span></a></li>
+        <li><a href="#"><span>Ítem 6</span></a></li>
+        <li><a href="#"><span>Ítem 7</span></a></li>
+        <li><a href="#"><span>Ítem 8</span></a></li>
+        <li><a href="#"><span>Ítem 9</span></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- /example -->
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"lista-colapsable"</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;a</span> <span class="na">class=</span><span class="s">"trigger collapsed"</span> <span class="na">data-toggle=</span><span class="s">"collapse"</span> <span class="na">href=</span><span class="s">"#listacolapsable1"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span> <span class="na">aria-controls=</span><span class="s">"listacolapsable1"</span><span class="nt">&gt;&lt;strong&gt;</span>Lista<span class="nt">&lt;/strong&gt;</span> de ítems<span class="nt">&lt;/a&gt;</span>
+
+  <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"listacolapsable1"</span> <span class="na">class=</span><span class="s">"lista collapse"</span> <span class="na">aria-expanded=</span><span class="s">"false"</span> <span class="na">role=</span><span class="s">"listbox"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;ul&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;&lt;span&gt;</span>Ítem 1<span class="nt">&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;&lt;span&gt;</span>Ítem 2<span class="nt">&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;&lt;span&gt;</span>Ítem 3<span class="nt">&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;&lt;span&gt;</span>Ítem 4<span class="nt">&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;&lt;span&gt;</span>Ítem 5<span class="nt">&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;&lt;span&gt;</span>Ítem 6<span class="nt">&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;&lt;span&gt;</span>Ítem 7<span class="nt">&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;&lt;span&gt;</span>Ítem 8<span class="nt">&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;&lt;a</span> <span class="na">href=</span><span class="s">"#"</span><span class="nt">&gt;&lt;span&gt;</span>Ítem 9<span class="nt">&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></div>
   
-  <div class="container">
+</div>
+<div class="bs-docs-section">
 
-  	<div class="banda-bicolor" style="width:160px; height:15px;"></div>
-
-    <div class="row">
-        <div class="col-md-8 col-sm-12">
-          
-			<div class="jumbotron">
-				<h1><strong>Gobstrap</strong></h1>
-				<p>La herramienta que permite construir sitios según el estilo gráfico del Gobierno de Chile de manera fácil, rápida y eficiente.</p>
-				<!-- <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p> -->
-			</div>
-
-        </div>
-    </div>
-
-  </div>
-
-</header>
-
-<div id="contenido">
-
-	<div class="container-fluid franja">
-    <div class="container">
-      <div class="row">
-
-        <div class="col-md-6 col-sm-12">
-          <h4>Siempre mobile first</h4>
-          <p>Nulla ultricies metus ex, quis posuere lectus aliquam sit amet. Cras ullamcorper justo dapibus arcu lacinia, sed placerat mauris suscipit. Integer sodales nisi massa, nec dignissim leo accumsan in. Sed auctor nisi quis maximus venenatis.</p>
-          <p>Cras maximus ante et bibendum vestibulum. Nunc et dictum magna. Ut vel laoreet nibh. Cras lacinia diam tincidunt lorem pretium congue. Donec malesuada sem erat, sit amet dictum turpis lacinia sit amet.</p>
-        </div>
-
-        <div class="col-md-5 col-sm-12 col-md-offset-1">
-          <img src="http://placehold.it/405x240" alt="">
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <div class="container-fluid franja">
-  	<div class="container">
-      <div class="row">
-
-        <div class="col-md-5 col-sm-12">
-        	<img src="http://placehold.it/405x240" alt="">
-        </div>
-
-        <div class="col-md-6 col-sm-12 col-md-offset-1 text-right">
-        	<h4>Ejemplos y plantillas</h4>
-          <p>Cras maximus ante et bibendum vestibulum. Nunc et dictum magna. Ut vel laoreet nibh. Cras lacinia diam tincidunt lorem pretium congue. Donec malesuada sem erat, sit amet dictum turpis lacinia sit amet.</p>
-          <p>Nulla ultricies metus ex, quis posuere lectus aliquam sit amet. Cras ullamcorper justo dapibus arcu lacinia, sed placerat mauris suscipit. Integer sodales nisi massa, nec dignissim leo accumsan in. Sed auctor nisi quis maximus venenatis.</p>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <div class="container-fluid franja">
-    <div class="container">
-      <div class="row">
-
-        <div class="col-md-6 col-sm-12">
-        	<h4>Listo para copiar y pegar</h4>
-          <p>Nulla ultricies metus ex, quis posuere lectus aliquam sit amet. Cras ullamcorper justo dapibus arcu lacinia, sed placerat mauris suscipit. Integer sodales nisi massa, nec dignissim leo accumsan in. Sed auctor nisi quis maximus venenatis.</p>
-          <p>Cras maximus ante et bibendum vestibulum. Nunc et dictum magna. Ut vel laoreet nibh. Cras lacinia diam tincidunt lorem pretium congue. Donec malesuada sem erat, sit amet dictum turpis lacinia sit amet.</p>
-        </div>
-
-        <div class="col-md-5 col-sm-12 col-md-offset-1">
-        	<img src="http://placehold.it/405x240" alt="">
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-  <div class="screenshots container">
-	
-		<div class="row">
-
-      <div class="col-md-4 col-sm-12">
-				<img src="http://placehold.it/320x200" alt="">
-				<div class="tarjeta">Lorem ipsum dolor sit amet</div>
-      </div>
-
-      <div class="col-md-4 col-sm-12">
-				<img src="http://placehold.it/320x200" alt="">
-				<div class="tarjeta">Lorem ipsum dolor sit amet</div>
-      </div>
-
-      <div class="col-md-4 col-sm-12">
-				<img src="http://placehold.it/320x200" alt="">
-				<div class="tarjeta">Lorem ipsum dolor sit amet</div>
-      </div>
-        
-    </div>
-
-	</div>
-
-<!--   <div class="container">
-	
-		<div class="row">
-
-      <div class="col-md-4 col-sm-12">
-				<div class="tarjeta">
-					Ejemplo Módulo 1
-				</div>
-      </div>
-
-      <div class="col-md-4 col-sm-12">
-				<div class="tarjeta">
-					Ejemplo Módulo 2
-				</div>
-      </div>
-
-      <div class="col-md-4 col-sm-12">
-				<div class="tarjeta">
-					Ejemplo Módulo 3
-				</div>
-      </div>
-        
-    </div>
-
-	</div> -->
-
-  <div class="container" style="margin-top:50px;">
-    <div class="row">
-      <div class="col-md-8 col-sm-12 col-md-offset-2 text-center">
-        <!-- <h2>Ut vel laoreet nibh</h2> -->
-        <p class="lead">Cras maximus ante et bibendum vestibulum. Nunc et dictum magna. Ut vel laoreet nibh. Cras lacinia diam tincidunt lorem pretium congue. Donec malesuada sem erat, sit amet dictum turpis lacinia sit amet.</p>
-        <a href="/documentacion" class="btn btn-success" role="button">Ir a la documentación ›</a>
-      </div>
-    </div>
-  </div>
-
+  <h2 id="otros-elementos">Otros elementos</h2> 
+  <p>Gobstrap está construido sobre Bootstrap, por lo que para cualquier duda o para conocer sus elementos y usos, dirígete directamente a <a href="http://getbootstrap.com/css/">la documentación de Boostrap</a>.</p>
+  
 </div>
 
+      <!-- Footer
+================================================== -->
+<div class="clearfix"></div>
+  <footer class="footer-gobcl" style="margin-top:30px;">
+    <div class="banda-bicolor">
+      <span class="azul"></span>
+      <span class="rojo"></span>
+    </div>
+    <div class="bottom">
+      <div class="pull-left">
+        <span>Palacio de La Moneda S/N - Teléfono: <a href="tel:+56212341234">+56 2 12341234</a></span>
+      </div>
+      <nav class="pull-right">
+        <ul class="list-inline">
+          <li><a href="#">Política de Privacidad</a></li>
+          <li><a href="#">Enlace 2</a></li>
+          <li><a href="#">Enlace 3</a></li>
+        </ul>
+      </nav>
+      <div class="clearfix"></div>
+      <div class="banda-bicolor">
+        <span class="azul"></span>
+        <span class="rojo"></span>
+      </div>
+    </div>
+  </footer>
 
-<div class="container">
-	<footer class="footer-gobcl">
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="../dist/js/gobstrap.js"></script>
 
-	  <div class="banda-bicolor">
-	    <span class="azul"></span>
-	    <span class="rojo"></span>
-	  </div>
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="../assets/js/ie10-viewport-bug-workaround.js"></script>
 
-  	<div class="bottom">
 
-	    <div class="pull-left">
-	        <span>Dirección Lorem Ipsum 1234 - Teléfono: <a href="tel:+56212341234">+56 2 12341234</a></span>
-	    </div>
+<script>
+  window.twttr = (function (d,s,id) {
+    var t, js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return; js=d.createElement(s); js.id=id; js.async=1;
+    js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+    return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+  }(document, "script", "twitter-wjs"));
+</script>
 
-	    <nav class="pull-right">
-	        <ul class="list-inline">
-	            <li><a href="#">Política de Privacidad</a></li>
-	            <li><a href="#">Enlace 2</a></li>
-	            <li><a href="#">Enlace 3</a></li>
-	        </ul>
-	    </nav>
+<!-- Analytics
+================================================== -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-	    <div class="clearfix"></div>
+  ga('create', 'UA-48790041-13', 'auto');
+  ga('send', 'pageview');
 
-	    <div class="banda-bicolor">
-	      <span class="azul"></span>
-	      <span class="rojo"></span>
-	    </div>
+</script>
 
-  	</div>
-
-	</footer>
-</div>
-        
+	</div></div>
   </body>
 </html>
