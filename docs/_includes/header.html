@@ -15,7 +15,13 @@
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700' rel='stylesheet' type='text/css'>
 
 <!-- Bootstrap core CSS - Modificado Gobstrap -->
+
+{% if site.github %}
+<link href="dist/css/bootstrap.min.css" rel="stylesheet">
+{% else %}
 <link href="../dist/css/gobstrap.min.css" rel="stylesheet">
+{% endif %}
+
 
 {% if page.layout == 'home' %}
 <!-- Home CSS -->
