@@ -1,3 +1,7 @@
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+}
 body {
   background: #fff;
 }
@@ -11,10 +15,37 @@ header .jumbotron {
 }
 #contenido .franja {
   background: #fff;
-  padding: 50px 0;
+  margin: 10px auto 30px;
 }
-#contenido .screenshots .tarjeta {
-  padding:12px 10px;
+#contenido .franja img {
+  max-width: 100%;
+}
+#contenido .franja .col-md-6 {
+  margin-bottom: 30px;
+}
+@media only screen and (min-width: 1020px) {
+  #contenido .franja .col-md-6 {
+    margin-bottom: 0;
+  }
+  #contenido .franja.ejemplos {
+    text-align: right;
+  }
+  #contenido .franja.ejemplos .col-md-6 {
+    float: right;
+  }
+}
+.screenshots {
+  margin: 30px auto;
+}
+.screenshots img {
+  max-width: 100%;
+  height: auto;
+}
+.screenshots .tarjeta {
+  padding: 10px;
+}
+.bajada .btn {
+  margin: 0 10px;
 }
 footer {
   margin-top: 50px;
