@@ -191,7 +191,7 @@
 @btn-gobrojo-border:             darken(@btn-gobrojo-bg, 15%);
 
 @btn-default-color:              @gray-dark;
-@btn-default-bg:                 #fff;
+@btn-default-bg:                 @gray-lighter;
 @btn-default-border:             @gray-light;
 
 @btn-primary-color:              #fff;
@@ -1150,7 +1150,8 @@
 		background:@btn-default-bg;
 		border-bottom-color:@btn-default-border;
 		&:hover, &.active, &:active {
-			background:@btn-default-border;
+			background:@gob-azul;
+			color:#fff;
 		}
 	}
 	&.btn-primary, &.btn-azul2 {
