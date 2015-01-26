@@ -1,0 +1,147 @@
+<!-- /tarjeta-full-8 -->
+<h2 id="tarjeta-full">Tarjeta Full</h2>
+
+<p>A partir de un elemento <code>.tarjeta</code> se pueden construir otro elementos modulares más complejos. Por ejemplo, agregándole <code>.tarjeta-full</code>, se crea un elemento modular que sirve para presentar información con una fotografía destacada, como una noticia o un anuncio importante. La variación de la fotografía puede ser variable, pero se recomienda usar imágenes apaisadas para no hacer crecer mucho el elemento.</p>
+
+<div class="bs-example" style="background:#f1f1f1">
+  <div class="tarjeta tarjeta-full">
+
+    <div class="imagen">
+      <a href="#"><img src="http://placehold.it/1920x720" alt=""></a>
+    </div>
+
+    <div class="contenido clearfix">
+
+      <div class="titulo">
+        <h4><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis pretium seme, turpis mi mollis leo</a></h4>
+      </div>
+      <div class="texto">
+        <span class="fecha">11 de marzo de 2014</span>
+        <p>Ut ligula eros, tempus tempus felis et, finibus dignissim odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at feugiat libero. Praesent aliquet dui nunc, ut gravida libero condimentum a. Nam feugiat ante dui, at efficitur nibh fermentum vitae. Praesent rhoncus purus a nunc vehicula pretium.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /example -->
+{% highlight html %}
+<div class="tarjeta tarjeta-full">
+
+  <div class="imagen">
+    <a href="#"><img src="http://placehold.it/1920x720" alt=""></a>
+  </div>
+
+  <div class="contenido clearfix">
+
+    <div class="titulo">
+      <h4><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis pretium seme, turpis mi mollis leo</a></h4>
+    </div>
+    <div class="texto">
+      <span class="fecha">11 de marzo de 2014</span>
+      <p>Ut ligula eros, tempus tempus felis et, finibus dignissim odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque at feugiat libero. Praesent aliquet dui nunc, ut gravida libero condimentum a. Nam feugiat ante dui, at efficitur nibh fermentum vitae. Praesent rhoncus purus a nunc vehicula pretium.</p>
+    </div>
+  </div>
+</div>
+{% endhighlight %}
+
+<!-- /tarjeta-horizontal-8 -->
+<h2 id="tarjeta-horizontal-12">Tarjeta horizontal - 12 columnas</h2>
+
+<p>Así mismo se puede usar la clase <code>.tarjeta-horizontal</code> junto a <code>.tarjeta</code> para un módulo con fotografía destacada y título, pero sin texto. En este caso, la fotografía debe mantener una relación de aspecto de 16:9 (1920x1080, 1280x720, etc). Si se quiere usar otro formato, se puede modificar el alto del módulo, pero se recomienda usar el predeterminado para evitar problemas en distintos dispositivos.</p>
+<div class="bs-example" style="background:#f1f1f1">
+  <div class="tarjeta tarjeta-horizontal">
+    <div class="imagen">
+      <a href="#"><img src="http://placehold.it/1920x1080" alt=""></a>
+    </div>
+
+    <div class="contenido clearfix">
+      <div class="titulo">
+        <h4><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis pretium seme, turpis mi</a></h4>
+      </div>
+
+      <div class="texto">
+        <span class="fecha">11 de marzo de 2014</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- /example -->
+{% highlight html%}
+<div class="tarjeta tarjeta-horizontal">
+  <div class="imagen">
+    <a href="#"><img src="http://placehold.it/1920x1080" alt=""></a>
+  </div>
+
+  <div class="contenido clearfix">
+    <div class="titulo">
+      <h4><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis pretium seme, turpis mi</a></h4>
+    </div>
+
+    <div class="texto">
+      <span class="fecha">11 de marzo de 2014</span>
+    </div>
+  </div>
+</div>
+{% endhighlight %}
+
+<!-- /tarjeta-horizontal-8 -->
+<h2 id="tarjeta-horizontal-8">Tarjeta horizontal - 8 columnas</h2>
+
+<p>Cuando la <code>.tarjeta-horizontal</code> está dentro de un <code>.col-md-8</code>, se adapta para visualizarse correctamente en ese formato. Atención con el largo del texto, para que la caja de contenido no se desarme o no desaparezca texto.</p>
+
+<div class="bs-example" style="background:#f1f1f1">
+
+  <div class="col-md-8">
+
+    <div class="tarjeta tarjeta-horizontal">
+      <div class="imagen">
+        <a href="#"><img src="http://placehold.it/1920x1080" alt=""></a>
+      </div>
+
+      <div class="contenido clearfix">
+        <div class="titulo">
+          <h4><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis pretium seme, turpis mi</a></h4>
+        </div>
+
+        <div class="texto">
+          <span class="fecha">11 de marzo de 2014</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="clearfix"></div>
+
+</div>
+
+<!-- /example -->
+{% highlight html%}
+<div class="col-md-8">
+
+  <div class="tarjeta tarjeta-horizontal">
+    <div class="imagen">
+      <a href="#"><img src="http://placehold.it/1920x1080" alt=""></a>
+    </div>
+
+    <div class="contenido clearfix">
+      <div class="titulo">
+        <h4><a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis pretium seme, turpis mi</a></h4>
+      </div>
+
+      <div class="texto">
+        <span class="fecha">11 de marzo de 2014</span>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<div class="clearfix"></div>
+{% endhighlight %}
+
+
+<div class="bs-callout bs-callout-info">
+  <h4>Atención con el uso</h4>
+  <p>Debido a sus características de alto y ancho, los módulos <code>.tarjeta-full</code> y <code>.tarjeta-horizontal</code> están diseñadas para ser usadas en condiciones específicas: <code>.tarjeta-full</code> dentro de un <code>.col-md-12</code> y <code>.tarjeta-horizontal</code> dentro de <code>.col-md-12</code> o <code>.col-md-8</code>. Para usarlo en otras opciones de grilla, es necesario revisar y adaptar -cuando corresponda- los estilos en gobstrap.less.</p>
+</div>

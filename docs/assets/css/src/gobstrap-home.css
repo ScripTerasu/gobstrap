@@ -1,0 +1,21 @@
+body {
+  background: #fff;
+}
+header .jumbotron {
+  background: none;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+#contenido {
+  padding-top: 20px;
+}
+#contenido .franja {
+  background: #fff;
+  padding: 50px 0;
+}
+#contenido .screenshots .tarjeta {
+  padding:12px 10px;
+}
+footer {
+  margin-top: 50px;
+}

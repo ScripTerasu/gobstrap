@@ -1,0 +1,63 @@
+<!-- Footer
+================================================== -->
+<div class="clearfix"></div>
+  <footer class="footer-gobcl" style="margin-top:30px;">
+    <div class="banda-bicolor">
+      <span class="azul"></span>
+      <span class="rojo"></span>
+    </div>
+    <div class="bottom">
+      <div class="pull-left">
+        <span>Palacio de La Moneda S/N - Teléfono: <a href="tel:+56212341234">+56 2 12341234</a></span>
+      </div>
+      <nav class="pull-right">
+        <ul class="list-inline">
+          <li><a href="#">Política de Privacidad</a></li>
+          <li><a href="#">Enlace 2</a></li>
+          <li><a href="#">Enlace 3</a></li>
+        </ul>
+      </nav>
+      <div class="clearfix"></div>
+      <div class="banda-bicolor">
+        <span class="azul"></span>
+        <span class="rojo"></span>
+      </div>
+    </div>
+  </footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="dist/js/gobstrap.js"></script>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+
+{% comment %}
+  Inject Twitter widgets asynchronously. Snippet snipped from Twitter's
+  JS interface site: https://dev.twitter.com/docs/tfw-javascript
+
+  * "js.async=1;" added to add async attribute to the generated script tag.
+{% endcomment %}
+<script>
+  window.twttr = (function (d,s,id) {
+    var t, js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return; js=d.createElement(s); js.id=id; js.async=1;
+    js.src="//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs);
+    return window.twttr || (t = { _e: [], ready: function(f){ t._e.push(f) } });
+  }(document, "script", "twitter-wjs"));
+</script>
+
+<!-- Analytics
+================================================== -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-48790041-13', 'auto');
+  ga('send', 'pageview');
+
+</script>
