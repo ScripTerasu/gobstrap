@@ -141,7 +141,7 @@ $(function () {
         notEqual($('#modal-test').length, 0, 'modal insterted into dom')
         $('.contents').click()
         ok($('#modal-test').is(':visible'), 'modal visible')
-        $('#modal-test .modal-backdrop').click()
+        $('#modal-test').mousedown()
       })
       .on('hidden.bs.modal', function () {
         ok(!$('#modal-test').is(':visible'), 'modal hidden')
@@ -196,7 +196,7 @@ $(function () {
     $('<div id="modal-test"><div class="contents"/></div>')
       .on('shown.bs.modal', function () {
         triggered = 0
-        $('#modal-test .modal-backdrop').click()
+        $('#modal-test').mousedown()
       })
       .on('hide.bs.modal', function () {
         triggered += 1
