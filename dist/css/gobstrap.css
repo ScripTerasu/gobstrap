@@ -1,6 +1,6 @@
 /*!
- * Bootstrap v3.3.1 (http://getbootstrap.com)
- * Copyright 2011-2014 Twitter, Inc.
+ * Bootstrap v3.3.2 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
@@ -901,12 +901,6 @@ th {
 .glyphicon-paste:before {
   content: "\e206";
 }
-.glyphicon-door:before {
-  content: "\1f6aa";
-}
-.glyphicon-key:before {
-  content: "\1f511";
-}
 .glyphicon-alert:before {
   content: "\e209";
 }
@@ -964,10 +958,22 @@ th {
 .glyphicon-bitcoin:before {
   content: "\e227";
 }
+.glyphicon-btc:before {
+  content: "\e227";
+}
+.glyphicon-xbt:before {
+  content: "\e227";
+}
 .glyphicon-yen:before {
   content: "\00a5";
 }
+.glyphicon-jpy:before {
+  content: "\00a5";
+}
 .glyphicon-ruble:before {
+  content: "\20bd";
+}
+.glyphicon-rub:before {
   content: "\20bd";
 }
 .glyphicon-scale:before {
@@ -2303,8 +2309,13 @@ th {
 .table-bordered > thead > tr > td {
   border-bottom-width: 2px;
 }
+<<<<<<< HEAD:dist/css/gobstrap.css
 .table-striped > tbody > tr:nth-child(odd) {
   background-color: #efefef;
+=======
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+>>>>>>> upstream/master:docs/dist/css/bootstrap.css
 }
 .table-hover > tbody > tr:hover {
   background-color: #efefef;
@@ -2590,13 +2601,21 @@ input[type="search"] {
   input[type="date"].input-sm,
   input[type="time"].input-sm,
   input[type="datetime-local"].input-sm,
-  input[type="month"].input-sm {
+  input[type="month"].input-sm,
+  .input-group-sm input[type="date"],
+  .input-group-sm input[type="time"],
+  .input-group-sm input[type="datetime-local"],
+  .input-group-sm input[type="month"] {
     line-height: 30px;
   }
   input[type="date"].input-lg,
   input[type="time"].input-lg,
   input[type="datetime-local"].input-lg,
-  input[type="month"].input-lg {
+  input[type="month"].input-lg,
+  .input-group-lg input[type="date"],
+  .input-group-lg input[type="time"],
+  .input-group-lg input[type="datetime-local"],
+  .input-group-lg input[type="month"] {
     line-height: 46px;
   }
 }
@@ -2704,12 +2723,23 @@ textarea.form-group-sm .form-control,
 select[multiple].form-group-sm .form-control {
   height: auto;
 }
+.form-group-sm .form-control-static {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+}
 .input-lg {
   height: 46px;
   padding: 10px 16px;
   font-size: 18px;
+<<<<<<< HEAD:dist/css/gobstrap.css
   line-height: 1.33;
   border-radius: 0;
+=======
+  line-height: 1.3333333;
+  border-radius: 6px;
+>>>>>>> upstream/master:docs/dist/css/bootstrap.css
 }
 select.input-lg {
   height: 46px;
@@ -2723,8 +2753,13 @@ select[multiple].input-lg {
   height: 46px;
   padding: 10px 16px;
   font-size: 18px;
+<<<<<<< HEAD:dist/css/gobstrap.css
   line-height: 1.33;
   border-radius: 0;
+=======
+  line-height: 1.3333333;
+  border-radius: 6px;
+>>>>>>> upstream/master:docs/dist/css/bootstrap.css
 }
 select.form-group-lg .form-control {
   height: 46px;
@@ -2733,6 +2768,12 @@ select.form-group-lg .form-control {
 textarea.form-group-lg .form-control,
 select[multiple].form-group-lg .form-control {
   height: auto;
+}
+.form-group-lg .form-control-static {
+  height: 46px;
+  padding: 10px 16px;
+  font-size: 18px;
+  line-height: 1.3333333;
 }
 .has-feedback {
   position: relative;
@@ -2942,7 +2983,7 @@ select[multiple].form-group-lg .form-control {
 }
 @media (min-width: 740px) {
   .form-horizontal .form-group-lg .control-label {
-    padding-top: 14.3px;
+    padding-top: 14.333333px;
   }
 }
 @media (min-width: 740px) {
@@ -3311,8 +3352,13 @@ fieldset[disabled] .btn-link:focus {
 .btn-group-lg > .btn {
   padding: 10px 16px;
   font-size: 18px;
+<<<<<<< HEAD:dist/css/gobstrap.css
   line-height: 1.33;
   border-radius: 0;
+=======
+  line-height: 1.3333333;
+  border-radius: 6px;
+>>>>>>> upstream/master:docs/dist/css/bootstrap.css
 }
 .btn-sm,
 .btn-group-sm > .btn {
@@ -3387,6 +3433,7 @@ tbody.collapse.in {
   border-right: 4px solid transparent;
   border-left: 4px solid transparent;
 }
+.dropup,
 .dropdown {
   position: relative;
 }
@@ -3578,12 +3625,12 @@ tbody.collapse.in {
 .btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
   border-radius: 0;
 }
-.btn-group > .btn-group:first-child > .btn:last-child,
-.btn-group > .btn-group:first-child > .dropdown-toggle {
+.btn-group > .btn-group:first-child:not(:last-child) > .btn:last-child,
+.btn-group > .btn-group:first-child:not(:last-child) > .dropdown-toggle {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
 }
-.btn-group > .btn-group:last-child > .btn:first-child {
+.btn-group > .btn-group:last-child:not(:first-child) > .btn:first-child {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
@@ -3709,8 +3756,13 @@ tbody.collapse.in {
   height: 46px;
   padding: 10px 16px;
   font-size: 18px;
+<<<<<<< HEAD:dist/css/gobstrap.css
   line-height: 1.33;
   border-radius: 0;
+=======
+  line-height: 1.3333333;
+  border-radius: 6px;
+>>>>>>> upstream/master:docs/dist/css/bootstrap.css
 }
 select.input-group-lg > .form-control,
 select.input-group-lg > .input-group-addon,
@@ -4803,7 +4855,8 @@ a.label:focus {
   position: relative;
   top: -1px;
 }
-.btn-xs .badge {
+.btn-xs .badge,
+.btn-group-xs > .btn .badge {
   top: 0;
   padding: 1px 5px;
 }
@@ -5342,7 +5395,11 @@ a.list-group-item-danger.active:focus {
   font-size: 16px;
   color: inherit;
 }
-.panel-title > a {
+.panel-title > a,
+.panel-title > small,
+.panel-title > .small,
+.panel-title > small > a,
+.panel-title > .small > a {
   color: inherit;
 }
 .panel-footer {

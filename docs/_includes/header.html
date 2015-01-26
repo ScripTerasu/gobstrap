@@ -28,7 +28,16 @@
 <!-- Documentacion CSS -->
 <link href="assets/css/src/gobstrap-docs.css" rel="stylesheet">
 <!-- Documentation extras -->
+<<<<<<< HEAD
 <link href="assets/css/docs.min.css" rel="stylesheet">
+=======
+{% if site.github %}
+<link href="../assets/css/docs.min.css" rel="stylesheet">
+{% else %}
+<link href="../assets/css/src/pygments-manni.css" rel="stylesheet">
+<link href="../assets/css/src/anchor.css" rel="stylesheet">
+<link href="../assets/css/src/docs.css" rel="stylesheet">
+>>>>>>> upstream/master
 {% endif %}
 
 <!--[if lt IE 9]><script src="assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
