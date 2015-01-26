@@ -111,6 +111,26 @@ body {
 
 
 /*
+ * Fancy skip link
+ *
+ * Make it look a bit less "bare bones"
+ */
+
+#skippy {
+  display: block;
+  padding: 1em;
+  color: #fff;
+  background-color: #6f5499;
+  outline: 0;
+}
+
+#skippy .skiplink-text {
+  padding: .5em;
+  outline: 1px dotted;
+}
+
+
+/*
  * Main navigation
  *
  * Turn the `.navbar` at the top of the docs purple.
@@ -158,14 +178,13 @@ body {
   padding-top: 40px;
   padding-bottom: 40px;
   margin-top: 100px;
-  color: #777;
+  color: #767676;
   text-align: center;
   border-top: 1px solid #e5e5e5;
 }
 .bs-docs-footer-links {
   padding-left: 0;
   margin-top: 20px;
-  color: #999;
 }
 .bs-docs-footer-links li {
   display: inline;
@@ -459,7 +478,7 @@ body {
   color: #333;
 }
 .bs-docs-featurette-img:hover {
-  color: #428bca;
+  color: #337ab7;
   text-decoration: none;
 }
 .bs-docs-featurette-img img {
@@ -539,7 +558,7 @@ body {
   padding: 4px 20px;
   font-size: 13px;
   font-weight: 500;
-  color: #999;
+  color: #767676;
 }
 .bs-docs-sidebar .nav > li > a:hover,
 .bs-docs-sidebar .nav > li > a:focus {
@@ -682,25 +701,37 @@ h1[id] {
 
 /* Variations */
 .bs-callout-danger {
+<<<<<<< HEAD
   background-color: #fdf7f7;
   border-color: #d9534f;
+=======
+  border-left-color: #ce4844;
+>>>>>>> FETCH_HEAD
 }
 .bs-callout-danger h4 {
-  color: #d9534f;
+  color: #ce4844;
 }
 .bs-callout-warning {
+<<<<<<< HEAD
   background-color: #fcf8f2;
   border-color: #f0ad4e;
+=======
+  border-left-color: #aa6708;
+>>>>>>> FETCH_HEAD
 }
 .bs-callout-warning h4 {
-  color: #f0ad4e;
+  color: #aa6708;
 }
 .bs-callout-info {
+<<<<<<< HEAD
   background-color: #f4f8fa;
   border-color: #5bc0de;
+=======
+  border-left-color: #1b809e;
+>>>>>>> FETCH_HEAD
 }
 .bs-callout-info h4 {
-  color: #5bc0de;
+  color: #1b809e;
 }
 
 
@@ -746,7 +777,7 @@ h1[id] {
   background-color: #eee;
 }
 .color-swatches .brand-primary {
-  background-color: #428bca;
+  background-color: #337ab7;
 }
 .color-swatches .brand-success {
   background-color: #5cb85c;
@@ -805,6 +836,21 @@ h1[id] {
 
 
 /*
+ * Wall of Browser Bugs
+ *
+ * Better display for the responsive table on the Wall of Browser Bugs.
+ */
+
+.bs-docs-browser-bugs td p {
+  margin-bottom: 0;
+}
+
+.bs-docs-browser-bugs th:first-child {
+  width: 18%;
+}
+
+
+/*
  * Grid examples
  *
  * Highlight the grid columns within the docs so folks can see their padding,
@@ -856,7 +902,8 @@ h1[id] {
 }
 
 /* Tweak display of the code snippets when following an example */
-.bs-example + .highlight {
+.bs-example + .highlight,
+.bs-example + .zero-clipboard + .highlight {
   margin: -15px -15px 15px;
   border-width: 0 0 1px;
   border-radius: 0;
@@ -874,7 +921,8 @@ h1[id] {
     -webkit-box-shadow: none;
             box-shadow: none;
   }
-  .bs-example + .highlight {
+  .bs-example + .highlight,
+  .bs-example + .zero-clipboard + .highlight {
     margin-top: -16px;
     margin-right: 0;
     margin-left: 0;
@@ -912,7 +960,7 @@ h1[id] {
 
 /* Typography */
 .bs-example-type .table .type-info {
-  color: #999;
+  color: #767676;
   vertical-align: middle;
 }
 .bs-example-type .table td {
@@ -1071,6 +1119,12 @@ h1[id] {
   margin-top: 5px;
   margin-bottom: 5px;
 }
+.bs-example-tooltip .tooltip {
+  position: relative;
+  display: inline-block;
+  margin: 10px 20px;
+  opacity: 1;
+}
 
 /* Popovers */
 .bs-example-popover {
@@ -1093,6 +1147,16 @@ h1[id] {
   overflow: auto;
 }
 
+/* Simple collapse example */
+#collapseExample .well {
+  margin-bottom: 0;
+}
+
+/* Don't wrap event names in Events tables in JS plugin docs */
+.bs-events-table > thead > tr > th:first-child,
+.bs-events-table > tbody > tr > td:first-child {
+  white-space: nowrap;
+}
 
 /*
  * Code snippets
@@ -1112,7 +1176,6 @@ h1[id] {
   margin-top: 0;
   margin-bottom: 0;
   word-break: normal;
-  word-wrap: nowrap;
   white-space: nowrap;
   background-color: transparent;
   border: 0;
@@ -1306,13 +1369,6 @@ h1[id] {
   font-weight: normal;
 }
 
-.bs-customizer-input {
-  float: left;
-  width: 33.333333%;
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
 /* Downloads */
 .bs-customize-download .btn-outline {
   padding: 20px;
@@ -1351,6 +1407,38 @@ h1[id] {
           box-shadow: inset 0 2px 4px rgba(0,0,0,.05), 0 1px 0 rgba(255,255,255,.1);
 }
 
+<<<<<<< HEAD
+=======
+.bs-dropzone {
+  position: relative;
+  padding: 20px;
+  margin-bottom: 20px;
+  color: #777;
+  text-align: center;
+  border: 2px dashed #eee;
+  border-radius: 4px;
+}
+.bs-dropzone .import-header {
+  margin-bottom: 5px;
+}
+.bs-dropzone .glyphicon-download-alt {
+  font-size: 40px;
+}
+.bs-dropzone hr {
+  width: 100px;
+}
+.bs-dropzone .lead {
+  margin-bottom: 10px;
+  font-weight: normal;
+  color: #333;
+}
+/*.bs-dropzone*/ #import-manual-trigger {
+  cursor: pointer;
+}
+.bs-dropzone p:last-child {
+  margin-bottom: 0;
+}
+>>>>>>> FETCH_HEAD
 
 /*
  * Brand guidelines
@@ -1380,10 +1468,6 @@ h1[id] {
 .bs-brand-logos .inverse {
   color: #fff;
   background-color: #563d7c;
-}
-.bs-brand-item .svg {
-  width: 144px;
-  height: 144px;
 }
 
 /* Heading content within */
@@ -1434,15 +1518,47 @@ h1[id] {
  * Odds and ends for optimum docs display.
  */
 
+<<<<<<< HEAD
 /* Examples gallery: space out content better */
 .bs-examples .thumbnail {
   margin-bottom: 10px;
+=======
+.zero-clipboard {
+  position: relative;
+  display: none;
+}
+.btn-clipboard {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  display: block;
+  padding: 5px 8px;
+  font-size: 12px;
+  color: #767676;
+  cursor: pointer;
+  background-color: #fff;
+  border: 1px solid #e1e1e8;
+  border-radius: 0 4px 0 4px;
+>>>>>>> FETCH_HEAD
 }
 .bs-examples h4 {
   margin-bottom: 5px;
 }
+<<<<<<< HEAD
 .bs-examples p {
   margin-bottom: 20px;
+=======
+
+@media (min-width: 768px) {
+  .zero-clipboard {
+    display: block;
+  }
+  .bs-example + .zero-clipboard .btn-clipboard {
+    top: -16px;
+    border-top-right-radius: 0;
+  }
+>>>>>>> FETCH_HEAD
 }
 
 /* Pseudo :focus state for showing how it looks in the docs */

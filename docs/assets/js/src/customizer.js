@@ -6,30 +6,50 @@
  * details, see http://creativecommons.org/licenses/by/3.0/.
  */
 
+<<<<<<< HEAD
+=======
+/* global JSZip, less, autoprefixer, saveAs, UglifyJS, __configBridge, __js, __less, __fonts */
+
+>>>>>>> FETCH_HEAD
 window.onload = function () { // wait for load in a dumb way because B-0
 
   'use strict';
   
   var cw = '/*!\n' +
+<<<<<<< HEAD
            ' * Bootstrap v3.1.1 (http://getbootstrap.com)\n' +
            ' * Copyright 2011-2014 Twitter, Inc.\n' +
+=======
+           ' * Bootstrap v3.3.1 (http://getbootstrap.com)\n' +
+           ' * Copyright 2011-' + new Date().getFullYear() + ' Twitter, Inc.\n' +
+>>>>>>> FETCH_HEAD
            ' * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)\n' +
            ' */\n\n'
 
   function showError(msg, err) {
     $('<div id="bsCustomizerAlert" class="bs-customizer-alert">' +
         '<div class="container">' +
-          '<a href="#bsCustomizerAlert" data-dismiss="alert" class="close pull-right">&times;</a>' +
-          '<p class="bs-customizer-alert-text"><span class="glyphicon glyphicon-warning-sign"></span>' + msg + '</p>' +
-          (err.extract ? '<pre class="bs-customizer-alert-extract">' + err.extract.join('\n') + '</pre>' : '') +
+          '<a href="#bsCustomizerAlert" data-dismiss="alert" class="close pull-right" aria-label="Close" role="button"><span aria-hidden="true">&times;</span></a>' +
+          '<p class="bs-customizer-alert-text"><span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span><span class="sr-only">Warning:</span>' + msg + '</p>' +
+          (err.message ? $('<p></p>').text('Error: ' + err.message)[0].outerHTML : '') +
+          (err.extract ? $('<pre class="bs-customizer-alert-extract"></pre>').text(err.extract.join('\n'))[0].outerHTML : '') +
         '</div>' +
       '</div>').appendTo('body').alert()
     throw err
   }
 
+<<<<<<< HEAD
+=======
+  function showSuccess(msg) {
+    $('<div class="bs-callout bs-callout-info">' +
+      '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' + msg +
+    '</div>').insertAfter('.bs-customize-download')
+  }
+
+>>>>>>> FETCH_HEAD
   function showCallout(msg, showUpTop) {
     var callout = $('<div class="bs-callout bs-callout-danger">' +
-       '<h4>Attention!</h4>' +
+      '<h4>Attention!</h4>' +
       '<p>' + msg + '</p>' +
     '</div>')
 
@@ -40,6 +60,14 @@ window.onload = function () { // wait for load in a dumb way because B-0
     }
   }
 
+<<<<<<< HEAD
+=======
+  function showAlert(type, msg, insertAfter) {
+    $('<div class="alert alert-' + type + '">' + msg + '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>')
+      .insertAfter(insertAfter)
+  }
+
+>>>>>>> FETCH_HEAD
   function getQueryParam(key) {
     key = key.replace(/[*+?^$.\[\]{}()|\\\/]/g, '\\$&') // escape RegEx meta chars
     var match = location.search.match(new RegExp('[?&]' + key + '=([^&]+)(&|$)'))
@@ -230,22 +258,32 @@ window.onload = function () { // wait for load in a dumb way because B-0
   }
 
   function compileLESS(lessSource, baseFilename, intoResult) {
+    var promise = $.Deferred()
     var parser = new less.Parser({
       paths: ['variables.less', 'mixins.less'],
       optimization: 0,
       filename: baseFilename + '.css'
     })
 
-    parser.parse(lessSource, function (err, tree) {
-      if (err) {
-        return showError('<strong>Ruh roh!</strong> Could not parse less files.', err)
+    parser.parse(lessSource, function (parseErr, tree) {
+      if (parseErr) {
+        return promise.reject(parseErr)
       }
-      intoResult[baseFilename + '.css']     = cw + tree.toCSS()
-      intoResult[baseFilename + '.min.css'] = cw + tree.toCSS({ compress: true })
+      try {
+        intoResult[baseFilename + '.css']     = cw + tree.toCSS()
+        intoResult[baseFilename + '.min.css'] = cw + tree.toCSS({ compress: true })
+      }
+      catch (compileErr) {
+        return promise.reject(compileErr)
+      }
+      promise.resolve()
     })
+
+    return promise.promise()
   }
 
   function generateCSS(preamble) {
+    var promise = $.Deferred()
     var oneChecked = false
     var lessFileIncludes = {}
     $('#less-section input').each(function() {
@@ -269,14 +307,22 @@ window.onload = function () { // wait for load in a dumb way because B-0
     var bsLessSource    = preamble + generateLESS('bootstrap.less', lessFileIncludes, vars)
     var themeLessSource = preamble + generateLESS('theme.less',     lessFileIncludes, vars)
 
-    try {
-      compileLESS(bsLessSource, 'bootstrap', result)
-      compileLESS(themeLessSource, 'bootstrap-theme', result)
-    } catch (err) {
-      return showError('<strong>Ruh roh!</strong> Could not parse less files.', err)
-    }
+    var prefixer = autoprefixer({ browsers: __configBridge.autoprefixerBrowsers })
 
-    return result
+    $.when(
+      compileLESS(bsLessSource, 'bootstrap', result),
+      compileLESS(themeLessSource, 'bootstrap-theme', result)
+    ).done(function () {
+      for (var key in result) {
+        result[key] = prefixer.process(result[key]).css
+      }
+      promise.resolve(result)
+    }).fail(function (err) {
+      showError('<strong>Ruh roh!</strong> Problem parsing or compiling Less files.', err)
+      promise.reject()
+    })
+
+    return promise.promise()
   }
 
   function uglify(js) {
@@ -298,7 +344,8 @@ window.onload = function () { // wait for load in a dumb way because B-0
 
   function generateJS(preamble) {
     var $checked = $('#plugin-section input:checked')
-    var jqueryCheck = 'if (typeof jQuery === "undefined") { throw new Error("Bootstrap\'s JavaScript requires jQuery") }\n\n'
+    var jqueryCheck = __configBridge.jqueryCheck.join('\n')
+    var jqueryVersionCheck = __configBridge.jqueryVersionCheck.join('\n')
 
     if (!$checked.length) return false
 
@@ -308,7 +355,7 @@ window.onload = function () { // wait for load in a dumb way because B-0
       .join('\n')
 
     preamble = cw + preamble
-    js = jqueryCheck + js
+    js = jqueryCheck + jqueryVersionCheck + js
 
     return {
       'bootstrap.js': preamble + js,
@@ -316,6 +363,58 @@ window.onload = function () { // wait for load in a dumb way because B-0
     }
   }
 
+<<<<<<< HEAD
+=======
+  function removeImportAlerts() {
+    importDropTarget.nextAll('.alert').remove()
+  }
+
+  function handleConfigFileSelect(e) {
+    e.stopPropagation()
+    e.preventDefault()
+
+    var file = (e.originalEvent.hasOwnProperty('dataTransfer')) ? e.originalEvent.dataTransfer.files[0] : e.originalEvent.target.files[0]
+
+    var reader = new FileReader()
+
+    reader.onload = function (e) {
+      var text = e.target.result
+
+      try {
+        var json = JSON.parse(text)
+
+        if (!$.isPlainObject(json)) {
+          throw new Error('JSON data from config file is not an object.')
+        }
+
+        updateCustomizerFromJson(json)
+        showAlert('success', '<strong>Woohoo!</strong> Your configuration was successfully uploaded. Tweak your settings, then hit Download.', importDropTarget)
+      } catch (err) {
+        return showAlert('danger', '<strong>Shucks.</strong> We can only read valid <code>.json</code> files. Please try again.', importDropTarget)
+      }
+    }
+
+    reader.readAsText(file, 'utf-8')
+  }
+
+  function handleConfigDragOver(e) {
+    e.stopPropagation()
+    e.preventDefault()
+    e.originalEvent.dataTransfer.dropEffect = 'copy'
+
+    removeImportAlerts()
+  }
+
+  if (supportsFile) {
+    importDropTarget
+      .on('dragover', handleConfigDragOver)
+      .on('drop', handleConfigFileSelect)
+  }
+
+  $('#import-file-select').on('change', handleConfigFileSelect)
+  $('#import-manual-trigger').on('click', removeImportAlerts)
+
+>>>>>>> FETCH_HEAD
   var inputsComponent = $('#less-section input')
   var inputsPlugin    = $('#plugin-section input')
   var inputsVariables = $('#less-variables-section input')
@@ -376,9 +475,15 @@ window.onload = function () { // wait for load in a dumb way because B-0
         ' * Config saved to config.json and ' + gistUrl + '\n' +
         ' */\n'
 
-      generateZip(generateCSS(preamble), generateJS(preamble), generateFonts(), configJson, function (blob) {
-        $compileBtn.removeAttr('disabled')
-        saveAs(blob, 'bootstrap.zip')
+      $.when(
+        generateCSS(preamble),
+        generateJS(preamble),
+        generateFonts()
+      ).done(function (css, js, fonts) {
+        generateZip(css, js, fonts, configJson, function (blob) {
+          $compileBtn.removeAttr('disabled')
+          setTimeout(function () { saveAs(blob, 'bootstrap.zip') }, 0)
+        })
       })
     })
   });
