@@ -13,10 +13,6 @@
     "web"
   ],
   "homepage": "http://www.gob.cl/",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/e-gob/gobstrap.git"
-  },
   "main": [
     "less/bootstrap.less",
     "dist/css/bootstrap.css",
@@ -39,5 +35,9 @@
   ],
   "dependencies": {
     "jquery": ">= 1.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/e-gob/gobstrap.git"
   }
 }
