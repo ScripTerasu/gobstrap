@@ -1,7 +1,7 @@
 {
-  "name": "bootstrap",
-  "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
-  "version": "3.3.2",
+  "name": "gobstrap",
+  "description": "Bootstrap version from Government of Chile",
+  "version": "1.0.0",
   "keywords": [
     "css",
     "js",
@@ -12,7 +12,11 @@
     "framework",
     "web"
   ],
-  "homepage": "http://getbootstrap.com",
+  "homepage": "http://www.gob.cl/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/e-gob/gobstrap.git"
+  },
   "main": [
     "less/bootstrap.less",
     "dist/css/bootstrap.css",
