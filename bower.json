@@ -1,5 +1,5 @@
 {
-  "name": "gobstrap",
+  "name": "iaperez-gobstrap",
   "description": "Bootstrap version from Government of Chile",
   "version": "3.3",
   "keywords": [
@@ -44,6 +44,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/e-gob/gobstrap.git"
+    "url": "https://github.com/iaperez/gobstrap.git"
   }
 }
