@@ -16,13 +16,13 @@
   "main": [
     "less/bootstrap.less",
     "dist/gobstrap-theme.css",
-    "dist/gobstrap-theme.css.map";
+    "dist/gobstrap-theme.css.map",
 		"dist/gobstrap-theme.min.css",
 		"dist/gobstrap.css",
 		"dist/gobstrap.css.map",
 		"dist/gobstrap.min.css",
-		"dist/gobstrap.js";
-		"dist/gobstrap.min.js";
+		"dist/gobstrap.js",
+		"dist/gobstrap.min.js",
     "dist/fonts/glyphicons-halflings-regular.eot",
     "dist/fonts/glyphicons-halflings-regular.svg",
     "dist/fonts/glyphicons-halflings-regular.ttf",
