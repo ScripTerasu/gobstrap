@@ -1,7 +1,7 @@
 {
-  "name": "gobstrap",
+  "name": "iaperez-gobstrap",
   "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
-  "version": "3.3.2",
+  "version": "1.0.0",
   "keywords": [
     "css",
     "less",
